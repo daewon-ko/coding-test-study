@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout forked repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set upstream and fetch updates
         run: |
