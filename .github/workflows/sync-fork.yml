@@ -19,6 +19,6 @@ jobs:
           git remote add upstream https://github.com/wda067/coding-test-study.git
           git fetch upstream
           git reset --hard upstream/main
-          git push origin main --force
+          git push https://github.com/${{ github.repository_owner }}/coding-test-study.git main --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
