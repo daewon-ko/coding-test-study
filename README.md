@@ -25,7 +25,7 @@ git push origin {GitHub ID}
 
 ## ✅ 파일 및 폴더 구조
 - 형식: `GitHub ID/플랫폼/플랫폼_문제 번호`
-  - 예시: `wda067/BOJ/BOJ_1234.java`
+  - 예시: `wda067/boj/BOJ_1234.java`
 
 ## ✅ 커밋 컨벤션
 - 형식: `타입: 플랫폼 / 문제 번호 / 난이도`
@@ -41,5 +41,5 @@ git push origin {GitHub ID}
 
 ## ✅ PR 컨벤션
 - 제목: `이름 / 날짜 / 푼 문제 수`
-  - 예시: `myeong-geun / 25년 1월 1일 / 2문제`
+  - 예시: `myeong-geun / 2025년 1월 1일 / 2문제`
 - 내용은 자유롭게 작성
