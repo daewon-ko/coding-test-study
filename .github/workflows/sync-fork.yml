@@ -1,0 +1,24 @@
+name: Sync with Upstream
+
+on:
+  schedule:
+    - cron: '0 20 * * *' # KST 새벽 5시 실행
+  workflow_dispatch: # 수동 실행 가능
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout forked repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set upstream and fetch updates
+        run: |
+          git remote add upstream https://github.com/wda067/coding-test-study.git
+          git fetch upstream
+          git reset --hard upstream/main
+          git push https://github.com/${{ github.repository_owner }}/coding-test-study.git main --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
