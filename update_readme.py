@@ -4,7 +4,7 @@ from github import Github
 
 # GitHub 토큰 및 리포지토리 정보
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
-REPO_NAME = 'wda067/test'  # 예: 'octocat/hello-world'
+REPO_NAME = 'wda067/coding-test-study'  # 예: 'octocat/hello-world'
 
 # 팀원 GitHub 사용자명
 TEAM_MEMBERS = ['wda067', 'daewon-ko', 'pkl0912', 'yeonjy']
@@ -37,7 +37,7 @@ def get_pr_status():
                 merged_year, merged_week, merged_month = get_week_number_and_year(merged_date)
                 # 머지한 날의 스터디원 체크
                 if  merged_year == current_year and merged_week == current_week and merged_month == current_month:
-                    day_index = merged_date.weekday() + 1  # 월요일=0, 일요일=6
+                    day_index = merged_date.weekday()  # 월요일=0, 일요일=6
 
                     for member in pr_status:
                         for i in range(day_index + 1):
