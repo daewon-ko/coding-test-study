@@ -41,8 +41,11 @@ def get_pr_status():
 
                     for member in pr_status:
                         for i in range(day_index + 1):
+                            if i == 5:
+                                break
                             if pr_status[member][i] == '':  # 만약 빈 값이면
                                 pr_status[member][i] = '❌'
+                                
                     pr_status[pr.user.login][day_index] = '✔️'  # 머지된 PR은 '✔️'로 표시
 
     return pr_status
