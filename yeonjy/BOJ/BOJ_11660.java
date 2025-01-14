@@ -1,4 +1,4 @@
-package yeonjy.OBJ;
+package yeonjy.boj;
 
 import java.io.BufferedReader;
 import java.io.IOException;
