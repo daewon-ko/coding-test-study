@@ -19,6 +19,18 @@ def get_week_number_and_year(date):
     first_day_of_week = datetime.date.fromisocalendar(iso_year, week_number, 4)
     return iso_year, week_number, first_day_of_week.month
 
+def extract_problem_count(title):
+    """PR 제목에서 문제 수를 추출"""
+    try:
+        # 제목 형식: 'myeong-geun / 2025년 1월 20일 / 1문제'
+        parts = title.split('/')
+        if len(parts) >= 3:
+            problem_count_str = parts[2].strip().split('문제')[0]
+            return int(problem_count_str)
+    except (ValueError, IndexError):
+        return 0  # 문제 수를 추출하지 못하면 기본값으로 0 반환
+    return 0
+
 def get_pr_status():
     """PR 상태를 가져오고, 머지된 날짜를 기준으로 요일별 상태 업데이트"""
     g = Github(GITHUB_TOKEN)
@@ -28,24 +40,20 @@ def get_pr_status():
     pulls = repo.get_pulls(state='closed', sort='created', direction='asc')
     current_year, current_week, current_month = get_week_number_and_year(datetime.datetime.now())
 
-    # closed pr을 탐색
     for pr in pulls:
-        # 머지한 스터디원의 pr이라면
         if pr.user.login in TEAM_MEMBERS and pr.merged:
             merged_date = pr.merged_at
-            if merged_date:
+            problem_count = extract_problem_count(pr.title)
+            if merged_date and problem_count >= 2:  # 문제 수가 2 이상일 때만 체크
                 merged_year, merged_week, merged_month = get_week_number_and_year(merged_date)
-                # 머지한 날의 스터디원 체크
-                if  merged_year == current_year and merged_week == current_week and merged_month == current_month:
+                if merged_year == current_year and merged_week == current_week and merged_month == current_month:
                     day_index = merged_date.weekday()  # 월요일=0, 일요일=6
-
                     for member in pr_status:
                         for i in range(day_index + 1):
                             if i == 5:
                                 break
                             if pr_status[member][i] == '':  # 만약 빈 값이면
                                 pr_status[member][i] = '❌'
-                                
                     pr_status[pr.user.login][day_index] = '✔️'  # 머지된 PR은 '✔️'로 표시
 
     return pr_status
