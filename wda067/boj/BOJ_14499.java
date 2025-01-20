@@ -18,7 +18,7 @@ public class BOJ_14499 {
         int M = Integer.parseInt(st.nextToken());
         int x = Integer.parseInt(st.nextToken());
         int y = Integer.parseInt(st.nextToken());
-        int K = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken()); 
 
         //동, 서, 북, 남
         int[] dx = {0, 0, -1, 1};
