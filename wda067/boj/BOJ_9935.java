@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 백준 / 문자열 폭발 / 골드4
 https://www.acmicpc.net/problem/9935
  */
-public class BOJ_9935 {
+public class BOJ_9935 { 
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
