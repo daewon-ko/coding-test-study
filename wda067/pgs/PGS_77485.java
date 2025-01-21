@@ -13,7 +13,7 @@ class PGS_77485 {
             for (int j = 1; j <= cols; j++) {
                 matrix[i][j] = index++;
             }
-        }
+        } 
 
         for (int[] query : queries) {
             int r1 = query[0];
