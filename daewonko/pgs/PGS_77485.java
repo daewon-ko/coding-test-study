@@ -1,10 +1,10 @@
-package daewonko.programmers;
+package daewonko.pgs;
 
 import java.util.ArrayList;
 import java.util.List;
 
 // 프로그래머스 행렬 테두리 회전하기
-public class 행렬테두리회전하기 {
+public class PGS_77485 {
     static int[][] graph;
 
     public int[] solution(int rows, int columns, int[][] queries) {
