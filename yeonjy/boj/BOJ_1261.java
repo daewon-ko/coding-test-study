@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ_2161 {
+public class BOJ_1261 {
     static final int[] dx = new int[]{-1, 1, 0, 0};
     static final int[] dy = new int[]{0, 0, -1, 1};
 
