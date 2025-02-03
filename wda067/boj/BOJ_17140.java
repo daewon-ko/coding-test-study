@@ -1,5 +1,3 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,16 +12,16 @@ import java.util.StringTokenizer;
 https://www.acmicpc.net/problem/17140
  */
 public class BOJ_17140 {
-    static int r, c, k;
-    static List<List<Integer>> rows = new ArrayList<>();
+
+    private static List<List<Integer>> rows = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        r = Integer.parseInt(st.nextToken());
-        c = Integer.parseInt(st.nextToken());
-        k = Integer.parseInt(st.nextToken());
+        int r = Integer.parseInt(st.nextToken());
+        int c = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
         //초기 입력값
         for (int i = 0; i < 3; i++) {
