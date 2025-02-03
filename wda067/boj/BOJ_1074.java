@@ -3,8 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//백준
-public class Main {
+/*
+백준 / Z / 골드5
+https://www.acmicpc.net/problem/1074
+ */
+public class BOJ_1074 {
 
     private static int count, r, c;
 
