@@ -1,14 +1,16 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BOJ_2042
-{
-    static long[] arr;
-    static long[] tree;
+/*
+백준 / 구간 합 구하기 / 골드1
+https://www.acmicpc.net/problem/2042
+ */
+public class BOJ_2042 {
+
+    private static long[] arr;
+    private static long[] tree;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -46,7 +48,7 @@ public class BOJ_2042
     }
 
     //세그먼트 트리 초기화
-    static long init(int start, int end, int node) {
+    private static long init(int start, int end, int node) {
         if (start == end) {
             return tree[node] = arr[start];
         }
@@ -55,7 +57,7 @@ public class BOJ_2042
     }
 
     //구간 합 구하기
-    static long sum(int start, int end, int node, int left, int right) {
+    private static long sum(int start, int end, int node, int left, int right) {
         if (left > end || right < start) {
             return 0;
         }
@@ -67,7 +69,7 @@ public class BOJ_2042
     }
 
     //값 업데이트
-    static void update(int start, int end, int node, int index, long diff) {
+    private static void update(int start, int end, int node, int index, long diff) {
         if (index < start || index > end) {
             return;
         }
