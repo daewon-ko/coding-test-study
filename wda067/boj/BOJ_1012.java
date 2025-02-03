@@ -9,11 +9,12 @@ https://www.acmicpc.net/problem/1012
  */
 public class BOJ_1012 {
 
-    static final int[] dr = {0, 1, 0, -1};
-    static final int[] dc = {1, 0, -1, 0};
-    static boolean[][] visit;
-    static int[][] map;
-    static int count, M, N;
+    private static final int[] dr = {0, 1, 0, -1};
+    private static final int[] dc = {1, 0, -1, 0};
+    private static boolean[][] visit;
+    private static int[][] map;
+    private static int M;
+    private static int N;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,7 +28,7 @@ public class BOJ_1012 {
             int K = Integer.parseInt(st.nextToken()); //배추 개수
             visit = new boolean[N][M];
             map = new int[N][M];
-            count = 0;
+            int count = 0;
 
             for (int cabbage = 0; cabbage < K; cabbage++) {
                 st = new StringTokenizer(br.readLine());
@@ -50,7 +51,7 @@ public class BOJ_1012 {
         }
     }
 
-    static void dfs(int r, int c) {
+    private static void dfs(int r, int c) {
         visit[r][c] = true;
 
         for (int i = 0; i < 4; i++) {
