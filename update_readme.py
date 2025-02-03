@@ -13,11 +13,28 @@ TEAM_MEMBERS = ['wda067', 'daewon-ko', 'pkl0912', 'yeonjy']
 DAYS_OF_WEEK = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
 
 def get_week_number_and_year(date):
-    """주어진 날짜의 ISO 연도와 몇째 주인지 반환"""
-    iso_year, week_number, _ = date.isocalendar()
-    """목요일을 기준으로 몇월인지 계산"""
-    first_day_of_week = datetime.date.fromisocalendar(iso_year, week_number, 4)
-    return iso_year, week_number, first_day_of_week.month
+    """주어진 날짜의 연도와 몇째 주인지 반환 (목요일을 기준으로 월 변경)"""
+    year = date.year
+
+    # date를 datetime.date로 변환 (datetime.datetime이 들어오는 경우를 대비)
+    date = date.date()
+
+    # 현재 날짜가 속한 주의 목요일 찾기
+    thursday_of_week = date + datetime.timedelta(days=(3 - date.weekday()))
+
+    # 목요일 기준으로 월을 결정
+    month = thursday_of_week.month
+
+    # 해당 월의 첫 번째 날짜
+    first_day_of_month = datetime.date(year, month, 1)
+    # 첫 번째 월요일 찾기
+    first_monday = first_day_of_month + datetime.timedelta(days=(0 - first_day_of_month.weekday()) % 7)
+
+    # 주어진 날짜의 주차 계산
+    days_difference = (date - first_monday).days
+    week_number = (days_difference // 7) + 1
+
+    return year, week_number, month
 
 def extract_problem_count(title):
     """PR 제목에서 문제 수를 추출"""
