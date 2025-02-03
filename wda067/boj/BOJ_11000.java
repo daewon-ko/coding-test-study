@@ -1,5 +1,3 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -48,7 +46,7 @@ public class BOJ_11000 {
         System.out.println(endTimes.size());
     }
 
-    static class Lecture {
+    private static class Lecture {
         int start;
         int end;
 
