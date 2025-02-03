@@ -44,7 +44,7 @@ public class BOJ_2109 {
         System.out.println(totalPay);
     }
 
-    static class Lecture {
+    private static class Lecture {
         int pay, day;
 
         public Lecture(int pay, int day) {
