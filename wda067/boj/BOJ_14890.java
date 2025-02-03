@@ -4,7 +4,10 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//백준
+/*
+백준 / 경사로 / 골드3
+https://www.acmicpc.net/problem/14890
+ */
 public class BOJ_14890 {
 
     private static int[][] map;
