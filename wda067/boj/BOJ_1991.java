@@ -4,13 +4,15 @@ import java.io.InputStreamReader;
 import java.util.BitSet;
 import java.util.StringTokenizer;
 
-//백준
+/*
+백준 / 트리 순회 / 실버1
+https://www.acmicpc.net/problem/1991
+ */
 public class BOJ_1991 {
 
-    static int[][] binaryTree;
+    private static int[][] binaryTree;
 
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());  //노드의 개수
@@ -40,7 +42,7 @@ public class BOJ_1991 {
         postorder(0);
     }
 
-    static void preorder(int node) {
+    private static void preorder(int node) {
         if (node == -1) {
             return;
         }
@@ -49,7 +51,7 @@ public class BOJ_1991 {
         preorder(binaryTree[node][1]);
     }
 
-    static void inorder(int node) {
+    private static void inorder(int node) {
         if (node == -1) {
             return;
         }
@@ -58,7 +60,7 @@ public class BOJ_1991 {
         inorder(binaryTree[node][1]);
     }
 
-    static void postorder(int node) {
+    private static void postorder(int node) {
         if (node == -1) {
             return;
         }
