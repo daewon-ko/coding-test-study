@@ -4,7 +4,10 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//백준
+/*
+백준 / 케빈 베이컨의 6단계 법칙 / 실버1
+https://www.acmicpc.net/problem/1389
+ */
 public class BOJ_1389 {
 
     public static void main(String[] args) throws IOException {
