@@ -7,7 +7,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-//백준
+/*
+백준 / 연구소 / 골드4
+https://www.acmicpc.net/problem/14502
+ */
 public class BOJ_14502 {
 
     private static final int[] DR = {-1, 1, 0, 0};
