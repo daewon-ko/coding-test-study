@@ -1,7 +1,4 @@
-package boj;
-
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -12,14 +9,14 @@ https://www.acmicpc.net/problem/1520
  */
 public class BOJ_1520 {
 
-    static int[] DR = {-1, 1, 0, 0};
-    static int[] DC = {0, 0, -1, 1};
-    static int[][] map;
-    static Integer[][] dp;
-    static int M, N, count = 0;
+    private static final int[] DR = {-1, 1, 0, 0};
+    private static final int[] DC = {0, 0, -1, 1};
+    private static int[][] map;
+    private static Integer[][] dp;
+    private static int M;
+    private static int N;
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("src/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -38,7 +35,7 @@ public class BOJ_1520 {
         System.out.println(dfs(0, 0));
     }
 
-    static int dfs(int r, int c) {
+    private static int dfs(int r, int c) {
         if (r == M - 1 && c == N - 1) {  //도착 지점에 도착하면 경로의 수 1 반환
             return 1;
         }

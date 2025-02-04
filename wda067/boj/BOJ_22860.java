@@ -1,5 +1,3 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,10 +15,10 @@ https://www.acmicpc.net/problem/22860
  */
 public class BOJ_22860 {
 
-    static Map<String, List<String>> folderMap = new HashMap<>();
-    static Map<String, List<String>> fileMap = new HashMap<>();
-    static Set<String> fileSet;
-    static int count;
+    private static Map<String, List<String>> folderMap = new HashMap<>();
+    private static Map<String, List<String>> fileMap = new HashMap<>();
+    private static Set<String> fileSet;
+    private static int count;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -64,7 +62,7 @@ public class BOJ_22860 {
         }
     }
 
-    static void dfs(String folder) {
+    private static void dfs(String folder) {
         if (folderMap.get(folder).isEmpty()) {  //하위 폴더가 없을 경우
             return;
         }

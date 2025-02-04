@@ -1,5 +1,3 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,8 +10,8 @@ https://www.acmicpc.net/problem/2110
  */
 public class BOJ_2110 {
 
-    static int N, C;
-    static int[] pos;
+    private static int N, C;
+    private static int[] pos;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -47,7 +45,7 @@ public class BOJ_2110 {
         System.out.println(result);
     }
 
-    static boolean canInstall(int distance) {
+    private static boolean canInstall(int distance) {
         //첫 번째 집에 공유기 설치
         int lastInstalled = pos[0];
         int count = 1;

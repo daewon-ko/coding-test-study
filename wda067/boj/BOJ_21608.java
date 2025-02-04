@@ -1,5 +1,3 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,11 +13,11 @@ https://www.acmicpc.net/problem/21608
  */
 public class BOJ_21608 {
 
-    static int[] dr = {-1, 1, 0, 0};
-    static int[] dc = {0, 0, -1, 1};
-    static int N;
-    static int[][] classroom;
-    static List<List<Integer>> likedStudents = new ArrayList<>();
+    private static final int[] DR = {-1, 1, 0, 0};
+    private static final int[] DC = {0, 0, -1, 1};
+    private static int N;
+    private static int[][] classroom;
+    private static List<List<Integer>> likedStudents = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -51,7 +49,7 @@ public class BOJ_21608 {
         System.out.println(calculateSatisfaction());
     }
 
-    static void placeStudent(int student) {
+    private static void placeStudent(int student) {
         int maxLike = -1;
         int maxEmpty = -1;
         int finalR = -1;
@@ -67,8 +65,8 @@ public class BOJ_21608 {
                 int emptyCount = 0;
 
                 for (int dir = 0; dir < 4; dir++) {  //인접 자리 탐색
-                    int nextR = r + dr[dir];
-                    int nextC = c + dc[dir];
+                    int nextR = r + DR[dir];
+                    int nextC = c + DC[dir];
 
                     if (nextR < 0 || nextR >= N || nextC < 0 || nextC >= N) {
                         continue;
@@ -107,7 +105,7 @@ public class BOJ_21608 {
     }
 
     //모든 학생의 만족도 계산
-    static int calculateSatisfaction() {
+    private static int calculateSatisfaction() {
         int satisfaction = 0;
 
         for (int r = 0; r < N; r++) {
@@ -116,8 +114,8 @@ public class BOJ_21608 {
                 int likeCount = 0;
 
                 for (int dir = 0; dir < 4; dir++) {
-                    int nextR = r + dr[dir];
-                    int nextC = c + dc[dir];
+                    int nextR = r + DR[dir];
+                    int nextC = c + DC[dir];
 
                     if (nextR < 0 || nextR >= N || nextC < 0 || nextC >= N) {
                         continue;

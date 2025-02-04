@@ -1,5 +1,3 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,14 +11,13 @@ https://www.acmicpc.net/problem/1174
  */
 public class BOJ_1174 {
 
-    static int N;
-    static int[] NUMBERS = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-    static List<Long> descendingNumbers = new ArrayList<>();
+    private static final int[] NUMBERS = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+    private static List<Long> descendingNumbers = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        N = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
         recur(0, 0);
 
         Collections.sort(descendingNumbers);
@@ -32,7 +29,7 @@ public class BOJ_1174 {
         }
     }
 
-    static void recur(long num, int index) {
+    private static void recur(long num, int index) {
         if (!descendingNumbers.contains(num)) {
             descendingNumbers.add(num);
         }

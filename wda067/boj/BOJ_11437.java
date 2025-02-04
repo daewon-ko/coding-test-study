@@ -13,10 +13,10 @@ https://www.acmicpc.net/problem/11437
  */
 public class BOJ_11437 {
 
-    static final List<List<Integer>> adjList = new ArrayList<>();
-    static boolean[] visited;
-    static int[] depth;
-    static int[] parent;
+    private static final List<List<Integer>> adjList = new ArrayList<>();
+    private static boolean[] visited;
+    private static int[] depth;
+    private static int[] parent;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -59,7 +59,7 @@ public class BOJ_11437 {
         System.out.println(sb);
     }
 
-    static void bfs(int node) {
+    private static void bfs(int node) {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(node);
         visited[node] = true;
@@ -79,7 +79,7 @@ public class BOJ_11437 {
         }
     }
 
-    static int lca(int a, int b) {
+    private static int lca(int a, int b) {
         //a의 깊이가 더 깊도록 설정한다.
         if (depth[a] < depth[b]) {
             int temp = a;

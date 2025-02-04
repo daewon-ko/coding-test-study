@@ -1,5 +1,3 @@
-package boj;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -14,11 +12,11 @@ https://www.acmicpc.net/problem/17144
  */
 public class BOJ_17144 {
 
-    static int[] DR = {-1, 1, 0, 0};
-    static int[] DC = {0, 0, -1, 1};
-    static int[] airPurifier = new int[2];
-    static int R, C;
-    static int[][] house;
+    private static final int[] DR = {-1, 1, 0, 0};
+    private static final int[] DC = {0, 0, -1, 1};
+    private static int[] airPurifier = new int[2];
+    private static int R, C;
+    private static int[][] house;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -106,7 +104,7 @@ public class BOJ_17144 {
         house[lowerR][1] = 0;
     }
 
-    static void bfs() {
+    private static void bfs() {
         Queue<int[]> queue = new LinkedList<>();
 
         //모든 먼지 좌표 큐에 삽입

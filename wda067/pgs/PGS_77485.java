@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+프로그래머스 / 행렬 테두리 회전하기 / Level2
+https://school.programmers.co.kr/learn/courses/30/lessons/77485
+ */
 class PGS_77485 {
 
     public List<Integer> solution(int rows, int cols, int[][] queries) {
@@ -13,7 +17,7 @@ class PGS_77485 {
             for (int j = 1; j <= cols; j++) {
                 matrix[i][j] = index++;
             }
-        } 
+        }
 
         for (int[] query : queries) {
             int r1 = query[0];

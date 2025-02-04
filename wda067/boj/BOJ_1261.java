@@ -1,9 +1,6 @@
-package boj;
-
 import static java.util.Comparator.comparingInt;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.PriorityQueue;
@@ -15,14 +12,13 @@ https://www.acmicpc.net/problem/1261
  */
 public class BOJ_1261 {
 
-    static int[] dr = {-1, 1, 0, 0};
-    static int[] dc = {0, 0, -1, 1};
-    static int[][] map;
-    static boolean[][] visited;
-    static int M, N, result;
+    private static final int[] DR = {-1, 1, 0, 0};
+    private static final int[] DC = {0, 0, -1, 1};
+    private static int[][] map;
+    private static boolean[][] visited;
+    private static int M, N, result;
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("src/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -43,7 +39,7 @@ public class BOJ_1261 {
         System.out.println(result);
     }
 
-    static void bfs() {
+    private static void bfs() {
         //인접 노드 중에서 빈 방부터 탐색
         PriorityQueue<Node> pq = new PriorityQueue<>(comparingInt(o -> o.cost));
         pq.add(new Node(0, 0, 0));
@@ -58,8 +54,8 @@ public class BOJ_1261 {
             }
 
             for (int dir = 0; dir < 4; dir++) {
-                int nextR = cur.r + dr[dir];
-                int nextC = cur.c + dc[dir];
+                int nextR = cur.r + DR[dir];
+                int nextC = cur.c + DC[dir];
 
                 if (nextR < 0 || nextR >= N || nextC < 0 || nextC >= M) {
                     continue;
@@ -78,7 +74,7 @@ public class BOJ_1261 {
         }
     }
 
-    static class Node {
+    private static class Node {
         int r, c, cost;
 
         public Node(int r, int c, int cost) {

@@ -1,5 +1,3 @@
-package boj;
-
 import static java.util.Comparator.comparingInt;
 
 import java.io.BufferedReader;
@@ -17,13 +15,14 @@ https://www.acmicpc.net/problem/16235
  */
 public class BOJ_16235 {
 
-    static int[] DR = {-1, -1, -1, 0, 1, 1, 1, 0};
-    static int[] DC = {-1, 0, 1, 1, 1, 0, -1, -1};
-    static int N, M, K;
-    static int[][] nutrients;
-    static int[][] addedNutrients;
-    static PriorityQueue<Tree> trees = new PriorityQueue<>(comparingInt(o -> o.age));
-    static List<Tree> deadTrees = new ArrayList<>();
+    private static final int[] DR = {-1, -1, -1, 0, 1, 1, 1, 0};
+    private static final int[] DC = {-1, 0, 1, 1, 1, 0, -1, -1};
+    private static int N;
+    private static int M;
+    private static int[][] nutrients;
+    private static int[][] addedNutrients;
+    private static PriorityQueue<Tree> trees = new PriorityQueue<>(comparingInt(o -> o.age));
+    private static List<Tree> deadTrees = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,7 +30,7 @@ public class BOJ_16235 {
 
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        K = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
         nutrients = new int[N + 1][N + 1];
         addedNutrients = new int[N + 1][N + 1];
 
@@ -63,7 +62,7 @@ public class BOJ_16235 {
     }
 
     //어린 나무부터 양분을 먹고, 먹지 못한 나무는 죽는다.
-    static void spring() {
+    private static void spring() {
         PriorityQueue<Tree> newTrees = new PriorityQueue<>(comparingInt(o -> o.age));
 
         while (!trees.isEmpty()) {
@@ -81,7 +80,7 @@ public class BOJ_16235 {
     }
 
     //죽은 나무 -> 양분
-    static void summer() {
+    private static void summer() {
         for (Tree deadTree : deadTrees) {
             nutrients[deadTree.r][deadTree.c] += deadTree.age / 2;
         }
@@ -89,7 +88,7 @@ public class BOJ_16235 {
     }
 
     //나무가 번식한다.
-    static void fall() {
+    private static void fall() {
         List<Tree> newTrees = new ArrayList<>();
 
         for (Tree tree : trees) {
@@ -109,7 +108,7 @@ public class BOJ_16235 {
     }
 
     //영양분 추가
-    static void winter() {
+    private static void winter() {
         for (int i = 0; i <= N; i++) {
             for (int j = 0; j <= N; j++) {
                 nutrients[i][j] += addedNutrients[i][j];
@@ -117,7 +116,7 @@ public class BOJ_16235 {
         }
     }
 
-    static class Tree {
+    private static class Tree {
         int r, c, age;
 
         public Tree(int r, int c, int age) {

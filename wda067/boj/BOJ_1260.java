@@ -8,14 +8,16 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-//백준
+/*
+백준 / DFS와 BFS / 실버2
+https://www.acmicpc.net/problem/1260
+ */
 public class BOJ_1260 {
 
-    static List<List<Integer>> adjList = new ArrayList<>();
-    static boolean[] visited;
+    private static List<List<Integer>> adjList = new ArrayList<>();
+    private static boolean[] visited;
 
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -48,7 +50,7 @@ public class BOJ_1260 {
         bfs(V);
     }
 
-    static void dfs(int node) {
+    private static void dfs(int node) {
         System.out.print(node + " ");
 
         visited[node] = true;
@@ -59,7 +61,7 @@ public class BOJ_1260 {
         }
     }
 
-    static void bfs(int node) {
+    private static void bfs(int node) {
         Queue<Integer> queue = new LinkedList<>();
         queue.add(node);
         visited[node] = true;

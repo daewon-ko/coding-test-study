@@ -1,7 +1,4 @@
-package boj;
-
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -13,7 +10,6 @@ https://www.acmicpc.net/problem/14501
 public class BOJ_14501 {
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("src/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());  //N + 1: 퇴사일

@@ -8,23 +8,21 @@ https://www.acmicpc.net/problem/9663
  */
 public class BOJ_9663 {
 
-    static int N, count;
-    static boolean[] board;
-    static boolean[] colCheck = new boolean[14];
-    static boolean[] plusDiagonalCheck = new boolean[27];
-    static boolean[] minusDiagonalCheck = new boolean[27];
+    private static int N, count;
+    private static boolean[] colCheck = new boolean[14];
+    private static boolean[] plusDiagonalCheck = new boolean[27];
+    private static boolean[] minusDiagonalCheck = new boolean[27];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         N = Integer.parseInt(br.readLine());
-        board = new boolean[N];
 
         recur(0);  //0번 행부터 시작
         System.out.println(count);
     }
 
-    static void recur(int row) {
+    private static void recur(int row) {
         if (row == N) {  //마지막 행까지 퀸을 놓은 경우
             count++;
             return;
