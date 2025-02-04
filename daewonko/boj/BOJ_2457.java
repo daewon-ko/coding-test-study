@@ -9,6 +9,7 @@ public class BOJ_2457 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
+
         PriorityQueue<Calendar> queue = new PriorityQueue<>();
         for (int i = 0; i < n; i++) {
             int startMonth = sc.nextInt();
