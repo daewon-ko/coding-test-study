@@ -1,8 +1,9 @@
+import static java.util.Comparator.comparingInt;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 /*
@@ -14,48 +15,54 @@ public class BOJ_2457 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(br.readLine());
-        Flower[] flowers = new Flower[n];
+        int N = Integer.parseInt(br.readLine());
+        //피는 날짜순으로 오름차순, 피는 날짜가 같으면 지는 날짜순으로 내림차순
+        PriorityQueue<Flower> flowers = new PriorityQueue<>(comparingInt((Flower f) -> f.start)
+                .thenComparing(comparingInt((Flower f) -> f.end)
+                        .reversed()));
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            int startMonth = Integer.parseInt(st.nextToken());
-            int startDay = Integer.parseInt(st.nextToken());
-            int endMonth = Integer.parseInt(st.nextToken());
-            int endDay = Integer.parseInt(st.nextToken());
-            flowers[i] = new Flower(startMonth * 100 + startDay, endMonth * 100 + endDay);
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int c = Integer.parseInt(st.nextToken());
+            int d = Integer.parseInt(st.nextToken());
+            int start = a * 100 + b;
+            int end = c * 100 + d;
+            flowers.add(new Flower(start, end));
         }
 
-        Arrays.sort(flowers, Comparator.comparingInt(f -> f.start));
-
-        int currentDate = 301;
+        int curDate = 301;
         int count = 0;
-        int index = 0;
 
-        while (currentDate <= 1130) {
-            int maxEndDate = currentDate;
-            while (index < n && flowers[index].start <= currentDate) {
-                if (flowers[index].end > maxEndDate) {
-                    maxEndDate = flowers[index].end;
+        while (curDate <= 1130) {  //11일 30일까지 반복
+            int maxDate = curDate;  //마지막 꽃이 지는 날
+
+            while (!flowers.isEmpty()) {
+                if (curDate < flowers.peek().start) {  //curDate 이후에 꽃이 필 경우 스킵
+                    break;
                 }
-                index++;
+
+                Flower flower = flowers.poll();
+                maxDate = Math.max(maxDate, flower.end);  //뽑힌 꽃으로 지는 날 연장
             }
-            if (maxEndDate == currentDate) {
+
+            if (maxDate == curDate) {  //연장되지 않았다면 꽃이 선택되지 않은 기간이 존재한다는 뜻
                 System.out.println(0);
                 return;
             }
-            currentDate = maxEndDate;
-            count++;
+
+            curDate = maxDate;
+            count++;  //꽃 카운트
         }
 
         System.out.println(count);
     }
 
     static class Flower {
-        int start;
-        int end;
+        private int start, end;
 
-        Flower(int start, int end) {
+        public Flower(int start, int end) {
             this.start = start;
             this.end = end;
         }
