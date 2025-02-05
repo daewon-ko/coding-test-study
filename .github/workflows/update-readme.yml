@@ -1,6 +1,8 @@
 name: Update README with PR Status
 
 on:
+  schedule:
+    - cron: '0 19 * * *' # KST 새벽 4시 실행
   workflow_dispatch:  # 수동 실행 트리거
 
 jobs:
