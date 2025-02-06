@@ -3,19 +3,21 @@ package daewonko.boj;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
-// 백준 두 배열의 합
-public class BOJ_2143 {
-    static int n, m;
-    static Long t;
 
-    static Long[] A, B;
-    static List<Long> arr = new ArrayList<>();
-    static List<Long> brr = new ArrayList<>();
+public class BOJ_2143 {
+
+
+    //백준 두 배열의 합
+    static Long t;
+    static int n, m;
+    static Long[] A;
+    static Long[] B;
+    static List<Long> brr;
+    static List<Long> arr;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -60,9 +62,8 @@ public class BOJ_2143 {
             count += upperBound(brr, t - x) - lowerBound(brr, t - x);
         }
         System.out.println(count);
+
     }
-
-
     // target보다 커지는 처음의 수를 찾는다.
     static int upperBound(List<Long> list, long target) {
         int left = 0;
@@ -93,4 +94,3 @@ public class BOJ_2143 {
         return left;
     }
 }
-
