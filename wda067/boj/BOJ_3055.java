@@ -11,12 +11,12 @@ https://www.acmicpc.net/problem/3055
  */
 public class BOJ_3055 {
 
-    static int R, C;
-    static char[][] map;
-    static int[] dr = {-1, 1, 0, 0};
-    static int[] dc = {0, 0, -1, 1};
-    static int[][] water;
-    static int[][] dochi;
+    private static int R, C;
+    private static char[][] map;
+    private static int[] dr = {-1, 1, 0, 0};
+    private static int[] dc = {0, 0, -1, 1};
+    private static int[][] water;
+    private static int[][] dochi;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -55,7 +55,7 @@ public class BOJ_3055 {
         dochiBfs(start);
     }
 
-    static void waterBfs() {
+    private static void waterBfs() {
         Queue<int[]> q = new LinkedList<>();
 
         for (int i = 0; i < R; i++) {  //물이 있는 위치 모두 추가
@@ -88,7 +88,7 @@ public class BOJ_3055 {
         }
     }
 
-    static void dochiBfs(int[] start) {
+    private static void dochiBfs(int[] start) {
         Queue<int[]> q = new LinkedList<>();
         q.add(start);
 
