@@ -59,7 +59,7 @@ def get_pr_status():
 
     for pr in pulls:
         if pr.user.login in TEAM_MEMBERS and pr.merged:
-            merged_date = pr.merged_at
+            merged_date = pr.merged_at + datetime.timedelta(hours=9)
             problem_count = extract_problem_count(pr.title)
             if merged_date and problem_count >= 2:  # 문제 수가 2 이상일 때만 체크
                 merged_year, merged_week, merged_month = get_week_number_and_year(merged_date)
