@@ -49,7 +49,7 @@ def extract_problem_count(title):
     return 0
 
 def get_pr_status():
-    """PR 상태를 가져오고, 머지된 날짜를 기준으로 요일별 상태 업데이트"""
+    """PR 상태를 가져오고, PR 생성 날짜를 기준으로 요일별 상태 업데이트"""
     g = Github(GITHUB_TOKEN)
     repo = g.get_repo(REPO_NAME)
     pr_status = {member: [''] * 7 for member in TEAM_MEMBERS}  # 기본값은 빈 문자열로 설정
@@ -58,20 +58,20 @@ def get_pr_status():
     current_year, current_week, current_month = get_week_number_and_year(datetime.datetime.now())
 
     for pr in pulls:
-        if pr.user.login in TEAM_MEMBERS and pr.merged:
-            merged_date = pr.merged_at + datetime.timedelta(hours=9)
+        if pr.user.login in TEAM_MEMBERS:
+            created_date = pr.created_at + datetime.timedelta(hours=9)  # PR 생성 시간을 KST로 변환
             problem_count = extract_problem_count(pr.title)
-            if merged_date and problem_count >= 2:  # 문제 수가 2 이상일 때만 체크
-                merged_year, merged_week, merged_month = get_week_number_and_year(merged_date)
-                if merged_year == current_year and merged_week == current_week and merged_month == current_month:
-                    day_index = merged_date.weekday()  # 월요일=0, 일요일=6
+            if created_date and problem_count >= 2:  # 문제 수가 2 이상일 때만 체크
+                created_year, created_week, created_month = get_week_number_and_year(created_date)
+                if created_year == current_year and created_week == current_week and created_month == current_month:
+                    day_index = created_date.weekday()  # 월요일=0, 일요일=6
                     for member in pr_status:
                         for i in range(day_index + 1):
                             if i == 5:
                                 break
-                            if pr_status[member][i] == '':  # 만약 빈 값이면
+                            if pr_status[member][i] == '':  # 빈 값이면 '❌' 설정
                                 pr_status[member][i] = '❌'
-                    pr_status[pr.user.login][day_index] = '✔️'  # 머지된 PR은 '✔️'로 표시
+                    pr_status[pr.user.login][day_index] = '✔️'  # PR 생성된 날짜를 '✔️'로 표시
 
     return pr_status
 
