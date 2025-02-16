@@ -1,4 +1,4 @@
-package yeonjy;
+package yeonjy.boj;
 
 
 import java.util.*;
