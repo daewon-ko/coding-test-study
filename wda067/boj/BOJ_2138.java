@@ -9,67 +9,70 @@ https://www.acmicpc.net/problem/2138
  */
 public class BOJ_2138 {
 
-    private static int[] cur, desire;
+    private static int[] current, desired;
     private static int N;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        N = Integer.parseInt(br.readLine());
-        cur = new int[N];
-        desire = new int[N];
+        N = Integer.parseInt(br.readLine());  //100,000 -> O(n^2) 불가
+        current = new int[N];
+        desired = new int[N];
 
         char[] charArray = br.readLine().toCharArray();
         for (int i = 0; i < N; i++) {
-            cur[i] = charArray[i] - '0';
+            current[i] = charArray[i] - '0';
         }
 
-        char[] charArray2 = br.readLine().toCharArray();
+        char[] charArray1 = br.readLine().toCharArray();
         for (int i = 0; i < N; i++) {
-            desire[i] = charArray2[i] - '0';
+            desired[i] = charArray1[i] - '0';
         }
 
-        int result1 = solve(false);  //첫 번째 스위치를 누르지 않음
-        int result2 = solve(true);  //첫 번째 스위치를 누름
+        int turnOnFirst = solve(true);
+        int turnOffFirst = solve(false);
 
         int answer;
-        if (result1 == -1) {
-            answer = result2;
-        } else if (result2 == -1) {
-            answer = result1;
+        if (turnOnFirst == -1) {
+            answer = turnOffFirst;
+        } else if (turnOffFirst == -1) {
+            answer = turnOnFirst;
         } else {
-            answer = Math.min(result1, result2);
+            answer = Math.min(turnOnFirst, turnOffFirst);
         }
 
         System.out.println(answer);
     }
 
-    static int solve(boolean pressFirst) {
-        int[] clone = cur.clone();
+    //전구의 상태를 바꾸면 좌우 전구까지 영향을 미치므로 순차적으로 해결해야 한다.
+    private static int solve(boolean isFirstTurnedOn) {
+        int[] clone = current.clone();
         int count = 0;
 
-        if (pressFirst) {
-            for (int i = -1; i <= 1; i++) {
-                if (i >= 0 && i < N) {
-                    clone[i] ^= 1; // 0 -> 1, 1 -> 0 토글
-                }
-            }
+        if (isFirstTurnedOn) {
+            clone[0] ^= 1;
+            clone[1] ^= 1;
             count++;
         }
 
-        for (int i = 1; i < N; i++) {
-            if (clone[i - 1] != desire[i - 1]) { // 이전 전구가 목표 상태와 다르면 눌러야 함
-                for (int j = i - 1; j <= i + 1; j++) {
-                    if (j >= 0 && j < N) {
-                        clone[j] ^= 1; // 0 -> 1, 1 -> 0 토글
+        for (int i = 1; i < N; i++) {  //두 번째 전구부터 탐색
+            if (clone[i - 1] != desired[i - 1]) {  //이전 전구가 목표와 다를 경우 스위치를 누른다.
+
+                if (i == N - 1) {  //마지막 전구일 경우
+                    clone[N - 1] ^= 1;
+                    clone[N - 2] ^= 1;
+                } else {
+                    for (int j = i - 1; j <= i + 1; j++) {
+                        clone[j] ^= 1;
                     }
                 }
+
                 count++;
             }
         }
 
-        // 마지막 상태가 목표 상태와 같은지 확인
-        if (Arrays.equals(clone, desire)) {
+        //마지막 상태가 목표 상태와 같은지 확인
+        if (Arrays.equals(clone, desired)) {
             return count;
         }
 
