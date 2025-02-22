@@ -8,13 +8,13 @@ https://school.programmers.co.kr/learn/courses/30/lessons/258707
 class PGS_258707 {
 
     private static List<Integer> cardList = new ArrayList<>();
-    private static boolean[] visited;
+    private static boolean[] paired;
     private static int n, myCoin;
 
     public int solution(int coin, int[] cards) {
         n = cards.length;
         myCoin = coin;
-        visited = new boolean[n];
+        paired = new boolean[n];
 
         //처음 카드 뽑기
         for (int i = 0; i < n / 3; i++) {
@@ -46,9 +46,9 @@ class PGS_258707 {
         //카드를 뽑기 전 합이 n+1이 되는 카드쌍 존재 여부
         for (int i = 0; i < n / 3; i++) {
             for (int j = i + 1; j < n / 3; j++) {
-                if (cardList.get(i) + cardList.get(j) == n + 1 && !visited[i] && !visited[j]) {
-                    visited[i] = true;
-                    visited[j] = true;
+                if (cardList.get(i) + cardList.get(j) == n + 1 && !paired[i] && !paired[j]) {
+                    paired[i] = true;
+                    paired[j] = true;
                     return true;
                 }
             }
@@ -57,9 +57,9 @@ class PGS_258707 {
         //뽑은 카드를 포함하여 합이 n+1이 되는 카드쌍 존재 여부
         for (int i = 0; i <= cardList.size(); i++) {
             for (int j = i + 1; j < cardList.size(); j++) {
-                if (cardList.get(i) + cardList.get(j) == n + 1 && !visited[i] && !visited[j]) {
-                    visited[i] = true;
-                    visited[j] = true;
+                if (cardList.get(i) + cardList.get(j) == n + 1 && !paired[i] && !paired[j]) {
+                    paired[i] = true;
+                    paired[j] = true;
 
                     //뽑은 카드일 경우 동전 소모
                     if (i >= n / 3) {
