@@ -30,10 +30,14 @@ public class BOJ_2482 {
 
         for (int i = 2; i <= N; i++) {
             for (int j = 2; j <= K; j++) {
+                //i번째 색을 선택하면 i-1번째 색은 선택할 수 없으므로 dp[i-2][j-1]
+                //i번째 색을 선택하지 않으면 i-1번째 색을 선택 dp[i-1][j]
                 dp[i][j] = (dp[i - 1][j] + dp[i - 2][j - 1]) % MOD;
             }
         }
 
+        //첫 번째 색을 선택하면 두 번째 색과 N번째 색은 선택할 수 없으므로 dp[N-3][K-1]
+        //첫 번째 색을 선택하지 않는 경우 dp[N-1][K]
         int result = (dp[N - 1][K] + dp[N - 3][K - 1]) % MOD;
         System.out.println(result);
     }
