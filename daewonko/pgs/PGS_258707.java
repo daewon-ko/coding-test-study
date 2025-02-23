@@ -2,7 +2,7 @@ package daewonko.pgs;
 import java.util.*;
 public class PGS_258707 {
 
-
+    public int [] solution(int n, int[][] roads, int[] sources, int destination) {
             List<List<Integer>> graph = new ArrayList<>();
             for (int i = 0; i <= n; i++) {
                 graph.add(new ArrayList<>());
