@@ -61,16 +61,17 @@ def get_pr_status():
         if pr.user.login in TEAM_MEMBERS:
             created_date = pr.created_at + datetime.timedelta(hours=9)  # PR 생성 시간을 KST로 변환
             problem_count = extract_problem_count(pr.title)
-            if created_date and problem_count >= 2:  # 문제 수가 2 이상일 때만 체크
-                created_year, created_week, created_month = get_week_number_and_year(created_date)
-                if created_year == current_year and created_week == current_week and created_month == current_month:
-                    day_index = created_date.weekday()  # 월요일=0, 일요일=6
-                    for member in pr_status:
-                        for i in range(day_index + 1):
-                            if i == 5:
-                                break
-                            if pr_status[member][i] == '':  # 빈 값이면 '❌' 설정
-                                pr_status[member][i] = '❌'
+            created_year, created_week, created_month = get_week_number_and_year(created_date)
+            
+            if created_year == current_year and created_week == current_week and created_month == current_month:
+                day_index = created_date.weekday()  # 월요일=0, 일요일=6
+                for member in pr_status:
+                    for i in range(day_index + 1):
+                        if i == 5:
+                            break
+                        if pr_status[member][i] == '':  # 빈 값이면 '❌' 설정
+                            pr_status[member][i] = '❌'
+                if problem_count >= 2:  # 문제 수가 2 이상일 때만 체크
                     pr_status[pr.user.login][day_index] = '✔️'  # PR 생성된 날짜를 '✔️'로 표시
 
     return pr_status
