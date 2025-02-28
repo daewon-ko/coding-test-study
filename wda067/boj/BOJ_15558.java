@@ -5,64 +5,105 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/*
+백준 / 점프 게임 / 골드5
+https://www.acmicpc.net/problem/15558
+ */
 public class BOJ_15558 {
 
-    static int n, k;
-    static int[][] map;
+    private static int N, K;
+    private static int[] left, right;
+    private static int[] dx;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        n = Integer.parseInt(st.nextToken());
-        k = Integer.parseInt(st.nextToken());
-        map = new int[2][n];
+        N = Integer.parseInt(st.nextToken());  //1 ~ 100,000
+        K = Integer.parseInt(st.nextToken());  //1 ~ 100,000
 
-        for (int i = 0; i < 2; i++) {
-            String str = br.readLine();
-            for (int j = 0; j < n; j++) {
-                map[i][j] = str.charAt(j) - '0';
-            }
+        left = new int[N];
+        right = new int[N];
+        dx = new int[]{-1, 1, K};
+
+        char[] charArray1 = br.readLine().toCharArray();
+        char[] charArray2 = br.readLine().toCharArray();
+        for (int i = 0; i < N; i++) {
+            left[i] = charArray1[i] - '0';
+            right[i] = charArray2[i] - '0';
         }
 
-        System.out.println(bfs() ? 1 : 0);
+        boolean flag = bfs();
+        if (flag) {
+            System.out.println(1);
+        } else {
+            System.out.println(0);
+        }
     }
 
     private static boolean bfs() {
-        boolean[][] visit = new boolean[2][n];
-        int[] dc = {-1, 1, k};
-        Queue<int[]> q = new LinkedList<>();
-        q.add(new int[]{0, 0, 0});
-        visit[0][0] = true;
+        Queue<Position> q = new LinkedList<>();
+        q.add(new Position(0, 0, true));
+        boolean[][] visited = new boolean[N][2];
+        visited[0][0] = true;
 
         while (!q.isEmpty()) {
-            int cur[] = q.poll();
-            for (int i = 0; i < 3; i++) {
-                int nc = cur[1] + dc[i];
-                int nr = cur[0];
-                int time = cur[2];
+            Position cur = q.poll();
 
-                if (i == 2) {
-                    nr = (cur[0] == 1) ? 0 : 1;
+            for (int dir = 0; dir < 3; dir++) {
+                int next = cur.x + dx[dir];
+                boolean isLeft = cur.isLeft;
+
+                if (dir == 2) {  //다른 줄로 이동
+                    isLeft = !isLeft;
                 }
 
-                if (nc >= n) {
+                if (next <= cur.t) {
+                    continue;
+                }
+
+                if (isLeft) {  //왼쪽 줄일 때
+                    if (next <= N - 1) {
+                        if (left[next] == 0) {  //위험한 칸일 경우
+                            continue;
+                        }
+                        if (!visited[next][0]) {  //이동가능할 경우
+                            q.add(new Position(next, cur.t + 1, isLeft));
+                            visited[next][0] = true;
+                        }
+                    }
+                }
+
+                if (!isLeft) {  //오른쪽 줄일 때
+                    if (next <= N - 1) {
+                        if (right[next] == 0) {  //위험한 칸일 경우
+                            continue;
+                        }
+                        if (!visited[next][1]) {  //이동가능할 경우
+                            q.add(new Position(next, cur.t + 1, isLeft));
+                            visited[next][1] = true;
+                        }
+                    }
+                }
+
+                if (next >= N - 1) {  //이동할 수 있는데 이미 탈출한 경우
                     return true;
                 }
-                if (nc <= time) {
-                    continue;
-                }
-                if (visit[nr][nc]) {
-                    continue;
-                }
-                if (map[nr][nc] == 0) {
-                    continue;
-                }
-
-                visit[nr][nc] = true;
-                q.add(new int[]{nr, nc, time + 1});
             }
         }
+
         return false;
+    }
+
+    private static class Position {
+
+        private int x, t;
+        private boolean isLeft;
+
+        public Position(int x, int t, boolean isLeft) {
+            this.x = x;
+            this.t = t;
+            this.isLeft = isLeft;
+        }
     }
 }
