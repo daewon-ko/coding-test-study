@@ -11,7 +11,6 @@ https://www.acmicpc.net/problem/3020
  */
 public class BOJ_3020 {
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("wda067/io/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
