@@ -20,7 +20,6 @@ public class BOJ_14502 {
     private static int N, M, max;
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("src/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
