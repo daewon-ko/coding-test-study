@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 
-public class BOJ_12518 {
+public class BOJ_12851 {
     static int n, k;
     static int minTime = Integer.MAX_VALUE;
     static int cnt = 0;
