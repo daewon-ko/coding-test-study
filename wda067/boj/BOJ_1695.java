@@ -29,9 +29,9 @@ public class BOJ_1695 {
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= N; j++) {
 
-                if (arr[i - 1] == rev[j - 1]) {  //두 수가 같다면 +1
+                if (arr[i - 1] == rev[j - 1]) {  //두 수가 같다면 LCS 길이 +1
                     dp[i][j] = dp[i - 1][j - 1] + 1;
-                } else {
+                } else {  //LCS 최대 길이는 유지된다.
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
                 }
 
