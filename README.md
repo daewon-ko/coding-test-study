@@ -1,11 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 3월 1주차
-| 스터디원 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 | 토요일 | 일요일 |
-|---------|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
-| wda067 | ✔️ | ❌ |  |  |  |  |  |
-| daewon-ko | ✔️ | ❌ |  |  |  |  |  |
-| pkl0912 | ❌ | ✔️ |  |  |  |  |  |
-| yeonjy | ✔️ | ❌ |  |  |  |  |  |
+## 📅 2025년 3월 1주차 문제
+
+### 📌 월요일 
+- [[BOJ] 2473번 세 용액](https://www.acmicpc.net/problem/2473)
+- [[BOJ] 16973번 직사각형 탈출](https://www.acmicpc.net/problem/16973)
+
+### 📌 화요일 
+- [[BOJ] 1695번 팰린드롬 만들기](https://www.acmicpc.net/problem/1695)
+- [[PGS] 150365번 미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365)
+
+### 📌 수요일 
+- [[BOJ] 11049번 행렬 곱셈 순서](https://www.acmicpc.net/problem/11049)
+- [[PGS] 17684번 압축](https://school.programmers.co.kr/learn/courses/30/lessons/17684)
+
+### 📌 목요일 
+- [[BOJ] 2533번 사회망 서비스(SNS)](https://www.acmicpc.net/problem/2533)
+- [[BOJ] 11559번 Puyo Puyo](https://www.acmicpc.net/problem/11559)
+
+### 📌 금요일 
+- [[BOJ] 2668번 숫자고르기](https://www.acmicpc.net/problem/2668)
+- [[PGS] 72411번 메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411)
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
