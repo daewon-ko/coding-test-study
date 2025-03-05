@@ -10,7 +10,7 @@
 - [[PGS] 150365번 미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365)
 
 ### 📌 수요일 
-- [[BOJ] 11049번 행렬 곱셈 순서](https://www.acmicpc.net/problem/11049)
+- [[BOJ] 2629번 양팔저울](https://www.acmicpc.net/problem/2629)
 - [[PGS] 17684번 압축](https://school.programmers.co.kr/learn/courses/30/lessons/17684)
 
 ### 📌 목요일 
