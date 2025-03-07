@@ -12,97 +12,96 @@ https://www.acmicpc.net/problem/11559
  */
 public class BOJ_11559 {
 
-    static char[][] map = new char[12][6];
-    static boolean[][] visited;
-    static int[] dx = {0, 0, 1, -1};
-    static int[] dy = {1, -1, 0, 0};
-    static boolean isBoom;
+    private static int[] dr = {-1, 1, 0, 0};
+    private static int[] dc = {0, 0, -1, 1};
+    private static char[][] field;
+    private static boolean[][] visited;
+    private static boolean flag;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        field = new char[12][6];
+
         for (int i = 0; i < 12; i++) {
-            map[i] = br.readLine().toCharArray();
+            String s = br.readLine();
+            for (int j = 0; j < 6; j++) {
+                field[i][j] = s.charAt(j);
+            }
         }
 
-        int chain = 0;
-
+        int count = 0;
         while (true) {
-            isBoom = false;
             visited = new boolean[12][6];
+            flag = false;
 
-            // 1. 터질 뿌요 탐색 및 폭발
             for (int i = 0; i < 12; i++) {
                 for (int j = 0; j < 6; j++) {
-                    if (map[i][j] != '.' && !visited[i][j]) {
-                        bfs(i, j, map[i][j]);
+                    if (field[i][j] != '.' && !visited[i][j]) {
+                        bfs(i, j, field[i][j]);
                     }
                 }
             }
 
-            // 터질 뿌요가 없으면 종료
-            if (!isBoom) {
+            if (!flag) {
                 break;
             }
 
-            // 2. 중력 작용
-            gravity();
-
-            chain++;
+            fall();
+            count++;
         }
 
-        System.out.println(chain);
+        System.out.println(count);
     }
 
-    static void bfs(int x, int y, char color) {
-        Queue<int[]> queue = new LinkedList<>();
-        List<int[]> puyos = new ArrayList<>();
-        queue.add(new int[]{x, y});
-        puyos.add(new int[]{x, y});
-        visited[x][y] = true;
+    private static void bfs(int r, int c, char color) {
+        Queue<int[]> q = new LinkedList<>();
+        List<int[]> list = new ArrayList<>();
+        q.add(new int[]{r, c});
+        list.add(new int[]{r, c});
+        visited[r][c] = true;
 
-        while (!queue.isEmpty()) {
-            int[] cur = queue.poll();
+        while (!q.isEmpty()) {
+            int[] cur = q.poll();
+            int curR = cur[0];
+            int curC = cur[1];
 
-            for (int i = 0; i < 4; i++) {
-                int nx = cur[0] + dx[i];
-                int ny = cur[1] + dy[i];
+            for (int dir = 0; dir < 4; dir++) {
+                int nextR = curR + dr[dir];
+                int nextC = curC + dc[dir];
 
-                if (nx < 0 || ny < 0 || nx >= 12 || ny >= 6) {
-                    continue;
-                }
-                if (visited[nx][ny] || map[nx][ny] != color) {
+                if (nextR < 0 || nextR >= 12 || nextC < 0 || nextC >= 6) {
                     continue;
                 }
 
-                queue.add(new int[]{nx, ny});
-                puyos.add(new int[]{nx, ny});
-                visited[nx][ny] = true;
+                if (!visited[nextR][nextC] && field[nextR][nextC] == color) {
+                    visited[nextR][nextC] = true;
+                    q.add(new int[]{nextR, nextC});
+                    list.add(new int[]{nextR, nextC});
+                }
             }
         }
 
-        if (puyos.size() >= 4) {
-            isBoom = true;
-            for (int[] p : puyos) {
-                map[p[0]][p[1]] = '.';
+        if (list.size() >= 4) {
+            flag = true;
+            for (int[] pos : list) {
+                field[pos[0]][pos[1]] = '.';
             }
         }
     }
 
-    static void gravity() {
+    private static void fall() {
         for (int j = 0; j < 6; j++) {
-            Queue<Character> queue = new LinkedList<>();
-
-            for (int i = 11; i >= 0; i--) {
-                if (map[i][j] != '.') {
-                    queue.add(map[i][j]);
-                    map[i][j] = '.';
+            for (int i = 11; i >= 1; i--) {
+                if (field[i][j] == '.') {
+                    for (int k = i - 1; k >= 0; k--) {
+                        if (field[k][j] != '.') {
+                            field[i][j] = field[k][j];
+                            field[k][j] = '.';
+                            break;
+                        }
+                    }
                 }
-            }
-
-            int idx = 11;
-            while (!queue.isEmpty()) {
-                map[idx--][j] = queue.poll();
             }
         }
     }
