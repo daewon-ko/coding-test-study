@@ -1,25 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 3월 1주차 문제
+## 📅 2025년 3월 3주차 문제
 
 ### 📌 월요일 
-- [[BOJ] 2473번 세 용액](https://www.acmicpc.net/problem/2473)
-- [[BOJ] 16973번 직사각형 탈출](https://www.acmicpc.net/problem/16973)
+- [[PGS] 150367번 표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367)
+- [[BOJ] 16234번 인구 이동](https://www.acmicpc.net/problem/16234)
 
 ### 📌 화요일 
-- [[BOJ] 1695번 팰린드롬 만들기](https://www.acmicpc.net/problem/1695)
-- [[PGS] 150365번 미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365)
+- [[PGS] 214288번 상담원 인원](https://school.programmers.co.kr/learn/courses/30/lessons/214288)
+- [[BOJ] 14002번 가장 긴 증가하는 부분 수열 4](https://www.acmicpc.net/problem/14002)
 
 ### 📌 수요일 
-- [[BOJ] 2629번 양팔저울](https://www.acmicpc.net/problem/2629)
-- [[PGS] 17684번 압축](https://school.programmers.co.kr/learn/courses/30/lessons/17684)
+- [[BOJ] 21610번 마법사 상어와 비바라기](https://www.acmicpc.net/problem/21610)
+- [[BOJ] 1774번 우주신과의 교감](https://www.acmicpc.net/problem/1774)
 
 ### 📌 목요일 
-- [[BOJ] 2533번 사회망 서비스(SNS)](https://www.acmicpc.net/problem/2533)
-- [[BOJ] 11559번 Puyo Puyo](https://www.acmicpc.net/problem/11559)
+- [[BOJ] 20055번 컨베이어 벨트 위의 로봇](https://www.acmicpc.net/problem/20055)
+- [[BOJ] 17136번 색종이 붙이기](https://www.acmicpc.net/problem/17136)
 
 ### 📌 금요일 
-- [[BOJ] 2668번 숫자고르기](https://www.acmicpc.net/problem/2668)
-- [[PGS] 72411번 메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411)
+- [[BOJ] 14226번 이모티콘](https://www.acmicpc.net/problem/14226)
+- [[BOJ] 13325번 이진 트리](https://www.acmicpc.net/problem/13325)
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
