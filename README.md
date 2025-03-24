@@ -2,24 +2,24 @@
 ## 📅 2025년 3월 3주차 문제
 
 ### 📌 월요일 
-- [[PGS] 150367번 표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367)
-- [[BOJ] 16234번 인구 이동](https://www.acmicpc.net/problem/16234)
+- [[PGS] 150368번 이모티콘 할인행사](https://school.programmers.co.kr/learn/courses/30/lessons/150368)
+- [[BOJ] 12738번 가장 긴 증가하는 부분 수열 3](https://www.acmicpc.net/problem/12738)
 
 ### 📌 화요일 
-- [[PGS] 214288번 상담원 인원](https://school.programmers.co.kr/learn/courses/30/lessons/214288)
-- [[BOJ] 14002번 가장 긴 증가하는 부분 수열 4](https://www.acmicpc.net/problem/14002)
+- [[PGS] 258709번 주사위 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/258709)
+- [[BOJ] 1806번 부분합](https://www.acmicpc.net/problem/1806)
 
 ### 📌 수요일 
-- [[BOJ] 21610번 마법사 상어와 비바라기](https://www.acmicpc.net/problem/21610)
-- [[BOJ] 1774번 우주신과의 교감](https://www.acmicpc.net/problem/1774)
+- [[PGS] 60061번 기둥과 보 설치](https://school.programmers.co.kr/learn/courses/30/lessons/60061)
+- [[PGS] 43238번 입국심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238)
 
 ### 📌 목요일 
-- [[BOJ] 20055번 컨베이어 벨트 위의 로봇](https://www.acmicpc.net/problem/20055)
-- [[BOJ] 17136번 색종이 붙이기](https://www.acmicpc.net/problem/17136)
+- [[PGS] 92344번 파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344)
+- [[BOJ] 1339번 단어 수학](https://www.acmicpc.net/problem/1339)
 
 ### 📌 금요일 
-- [[BOJ] 14226번 이모티콘](https://www.acmicpc.net/problem/14226)
-- [[BOJ] 13325번 이진 트리](https://www.acmicpc.net/problem/13325)
+- [[PGS] 86971번 전력망을 둘로 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
+- [[PGS] 43236번 징검다리](https://school.programmers.co.kr/learn/courses/30/lessons/43236)
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
