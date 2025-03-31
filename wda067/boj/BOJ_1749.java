@@ -28,6 +28,7 @@ public class BOJ_1749 {
             }
         }
 
+        //2차원 구간합 계산
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= M; j++) {
                 sum[i][j] = sum[i][j - 1] + sum[i - 1][j] - sum[i - 1][j - 1] + matrix[i][j];
@@ -35,6 +36,7 @@ public class BOJ_1749 {
         }
 
         int max = Integer.MIN_VALUE;
+        //(1, 1)부터 (i, j)까지의 부분 행렬 중 최대 합 탐색
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= M; j++) {
                 max = Math.max(max, getSum(i, j));
@@ -46,6 +48,7 @@ public class BOJ_1749 {
 
     private static int getSum(int r, int c) {
         int max = Integer.MIN_VALUE;
+        //(i, j) 부터 (r, c)까지 부분 행렬 중 최대 합 계산
         for (int i = 1; i <= r; i++) {
             for (int j = 1; j <= c; j++) {
                 max = Math.max(max, sum[r][c] - sum[r][j - 1] - sum[i - 1][c] + sum[i - 1][j - 1]);
