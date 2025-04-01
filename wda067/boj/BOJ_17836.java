@@ -13,8 +13,9 @@ public class BOJ_17836 {
 
     private static int[] dr = {-1, 1, 0, 0};
     private static int[] dc = {0, 0, -1, 1};
+
     private static int N, M, T;
-    private static int[][] map;
+    private static int[][] castle;
     private static boolean[][][] visited;
 
     public static void main(String[] args) throws IOException {
@@ -25,76 +26,82 @@ public class BOJ_17836 {
         M = Integer.parseInt(st.nextToken());
         T = Integer.parseInt(st.nextToken());
 
-        map = new int[N][M];
-        visited = new boolean[N][M][2];
-
-        for (int i = 0; i < N; i++) {
+        //성 초기화
+        castle = new int[N + 1][M + 1];
+        for (int i = 1; i <= N; i++) {
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < M; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken());
+            for (int j = 1; j <= M; j++) {
+                castle[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
+        visited = new boolean[N + 1][M + 1][2];  //0 -> 그람 x, 1 -> 그람 o
         int result = bfs();
-        System.out.println(result <= T ? result : "Fail");
+
+        if (result == -1) {
+            System.out.println("Fail");
+            return;
+        }
+
+        System.out.println(result);
     }
 
     private static int bfs() {
-        Queue<Node> queue = new LinkedList<>();
-        queue.offer(new Node(0, 0, 0, false));
-        visited[0][0][0] = true;
+        Queue<Node> q = new LinkedList<>();
+        q.add(new Node(1, 1, 0, false));
+        visited[1][1][0] = true;
 
-        while (!queue.isEmpty()) {
-            Node current = queue.poll();
+        while (!q.isEmpty()) {
+            Node cur = q.poll();
 
-            if (current.x == N - 1 && current.y == M - 1) {
-                return current.time;
+            if (cur.time > T) {
+                break;
+            }
+            if (cur.r == N && cur.c == M) {
+                return cur.time;
             }
 
-            for (int dir = 0; dir < 4; dir++) {
-                int nx = current.x + dr[dir];
-                int ny = current.y + dc[dir];
-                int hasGram = current.hasGram ? 1 : 0;
+            for (int d = 0; d < 4; d++) {
+                int nextR = cur.r + dr[d];
+                int nextC = cur.c + dc[d];
 
-                if (nx < 0 || nx >= N || ny < 0 || ny >= M) {
+                if (nextR < 1 || nextR > N || nextC < 1 || nextC > M) {
                     continue;
                 }
 
-                if (visited[nx][ny][hasGram]) {
-                    continue;
-                }
-
-                if (current.hasGram) {
-                    visited[nx][ny][1] = true;
-                    queue.offer(new Node(nx, ny, current.time + 1, true));
-                } else {
-                    if (map[nx][ny] == 1) {
-                        continue;
+                boolean[] nextVisited = visited[nextR][nextC];
+                if (!cur.hasGram) {  //그람 미획득 상태
+                    if (!nextVisited[0]) {
+                        if (castle[nextR][nextC] == 0) {
+                            nextVisited[0] = true;
+                            q.add(new Node(nextR, nextC, cur.time + 1, false));
+                        } else if (castle[nextR][nextC] == 2) {  //그람 획득
+                            nextVisited[1] = true;
+                            q.add(new Node(nextR, nextC, cur.time + 1, true));
+                        }
                     }
-
-                    if (map[nx][ny] == 2) {
-                        visited[nx][ny][1] = true;
-                        queue.offer(new Node(nx, ny, current.time + 1, true));
-                    } else {
-                        visited[nx][ny][0] = true;
-                        queue.offer(new Node(nx, ny, current.time + 1, false));
+                } else {  //그람 획득 상태
+                    if (!nextVisited[1]) {
+                        q.add(new Node(nextR, nextC, cur.time + 1, true));
+                        nextVisited[1] = true;
                     }
                 }
             }
         }
-        return Integer.MAX_VALUE;
+
+        return -1;
     }
 
     private static class Node {
-        int x, y, time;
+
+        int r, c, time;
         boolean hasGram;
 
-        Node(int x, int y, int time, boolean hasGram) {
-            this.x = x;
-            this.y = y;
+        public Node(int r, int c, int time, boolean hasGram) {
+            this.r = r;
+            this.c = c;
             this.time = time;
             this.hasGram = hasGram;
         }
     }
 }
-
