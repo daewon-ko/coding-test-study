@@ -1,25 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 4월 1주차 문제
+## 📅 2025년 4월 2주차 문제
 
 ### 📌 월요일 
-- [[BOJ] 17836번 공주님을 구해라!](https://www.acmicpc.net/problem/17836)
-- [[BOJ] 1749번 점수따먹기](https://www.acmicpc.net/problem/1749)
+- [[PGS] 64062번 징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062)  
+- [[BOJ] 1106번 호텔](https://www.acmicpc.net/problem/1106)  
 
 ### 📌 화요일 
-- [[PGS] 258705번 산 모양 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/258705)
-- [[PGS] 388352번 비밀 코드 해독](https://school.programmers.co.kr/learn/courses/30/lessons/388352)
+- [[PGS] 92342번 양궁대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342)  
+- [[BOJ] 1715번 카드 정렬하기](https://www.acmicpc.net/problem/1715)  
 
 ### 📌 수요일 
-- [[BOJ] 2493번 탑](https://www.acmicpc.net/problem/2493)
-- [[BOJ] 2412번 암벽 등반](https://www.acmicpc.net/problem/2412)
+- [[PGS] 17676번 추석 트래픽](https://school.programmers.co.kr/learn/courses/30/lessons/17676)  
+- [[PGS] 12979번 기지국 설치](https://school.programmers.co.kr/learn/courses/30/lessons/12979)  
 
 ### 📌 목요일 
-- [[PGS] 150369번 택배 배달과 수거하기](https://school.programmers.co.kr/learn/courses/30/lessons/150369)
-- [[PGS] 60059번 자물쇠와 열쇠](https://school.programmers.co.kr/learn/courses/30/lessons/60059)
+- [[PGS] 92341번 주차 요금 계산](https://school.programmers.co.kr/learn/courses/30/lessons/92341)  
+- [[BOJ] 22862번 가장 긴 짝수 연속한 부분 수열](https://www.acmicpc.net/problem/22862)  
 
 ### 📌 금요일 
-- [[BOJ] 9519번 졸려](https://www.acmicpc.net/problem/9519)
-- [[BOJ] 1939번 중량제한](https://www.acmicpc.net/problem/1939)
+- [[BOJ] 10986번 나머지 합](https://www.acmicpc.net/problem/10986)  
+- [[BOJ] 20210번 파일 탐색기](https://www.acmicpc.net/problem/20210)  
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
