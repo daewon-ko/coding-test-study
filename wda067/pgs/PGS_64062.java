@@ -10,7 +10,7 @@ public class PGS_64062 {
     public int solution(int[] stones, int k) {
         this.stones = stones;
         this.k = k;
-        int count = 0;
+        int answer = 0;
 
         int s = 1;
         int e = 200_000_000;
@@ -18,24 +18,24 @@ public class PGS_64062 {
         while (s <= e) {
             int m = (s + e) / 2;
 
-            if (canCross(m)) {
-                count = m;
+            if (canCross(m)) {  //m명은 건널 수 있음 -> 다음 사람 시도
+                answer = m;
                 s = m + 1;
-            } else {
+            } else {  //m명은 못 건넘 -> 인원 감소
                 e = m - 1;
             }
         }
 
-        return count;
+        return answer;
     }
 
     private boolean canCross(int m) {
         int skip = 0;
 
         for (int stone : stones) {
-            if (stone - m < 0) {
+            if (stone - m < 0) {  //0 이하인 디딤돌일 때
                 skip++;
-                if (skip >= k) {
+                if (skip >= k) {  //그 개수가 k개 이상이면 false
                     return false;
                 }
             } else {
