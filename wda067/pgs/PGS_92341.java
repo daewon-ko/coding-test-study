@@ -3,13 +3,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 /*
 프로그래머스 / 주차 요금 계산 / Level 2
 https://school.programmers.co.kr/learn/courses/30/lessons/92341
  */
 class PGS_92341 {
-    
+
     public int[] solution(int[] fees, String[] records) {
         Map<String, Integer> inTime = new HashMap<>();
         Map<String, Integer> totalTime = new HashMap<>();
