@@ -1,25 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 4월 2주차 문제
+## 📅 2025년 4월 3주차 문제
 
 ### 📌 월요일 
-- [[PGS] 64062번 징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062)  
-- [[BOJ] 1106번 호텔](https://www.acmicpc.net/problem/1106)  
+- [[PGS] 42884번 단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884)  
+- [[BOJ] 16472번 고냥이](https://www.acmicpc.net/problem/16472)  
 
 ### 📌 화요일 
-- [[PGS] 92342번 양궁대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342)  
-- [[BOJ] 1715번 카드 정렬하기](https://www.acmicpc.net/problem/1715)  
+- [[BOJ] 16954번 움직이는 미로 탈출](https://www.acmicpc.net/problem/16954)  
+- [[BOJ] 13397번 구간 나누기 2](https://www.acmicpc.net/problem/13397)  
 
 ### 📌 수요일 
-- [[PGS] 17676번 추석 트래픽](https://school.programmers.co.kr/learn/courses/30/lessons/17676)  
-- [[PGS] 12979번 기지국 설치](https://school.programmers.co.kr/learn/courses/30/lessons/12979)  
+- [[BOJ] 14938번 서강 그라운드](https://www.acmicpc.net/problem/14938)  
+- [[BOJ] 15685번 드래곤 커브](https://www.acmicpc.net/problem/15685)  
 
 ### 📌 목요일 
-- [[PGS] 92341번 주차 요금 계산](https://school.programmers.co.kr/learn/courses/30/lessons/92341)  
-- [[BOJ] 22862번 가장 긴 짝수 연속한 부분 수열](https://www.acmicpc.net/problem/22862)  
+- [[BOJ] 1043번 거짓말](https://www.acmicpc.net/problem/1043)  
+- [[PGS] 42892번 길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892)  
 
 ### 📌 금요일 
-- [[BOJ] 10986번 나머지 합](https://www.acmicpc.net/problem/10986)  
-- [[BOJ] 20210번 파일 탐색기](https://www.acmicpc.net/problem/20210)  
+- [[PGS] 43162번 네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162)  
+- [[PGS] 67259번 경주로 건설](https://school.programmers.co.kr/learn/courses/30/lessons/67259)  
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
