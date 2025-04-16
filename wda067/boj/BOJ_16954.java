@@ -15,7 +15,7 @@ public class BOJ_16954 {
     private static int[] dc = {-1, 0, 1, 1, 1, 0, -1, -1, 0};
 
     private static char[][] board = new char[8][8];
-    private static boolean[][][] visited = new boolean[9][8][8];
+    static boolean[][][] visited = new boolean[8][8][9]; //row, col, time
 
     public static void main(String[] args) throws IOException {
         System.setIn(new FileInputStream("wda067/io/input.txt"));
@@ -31,8 +31,8 @@ public class BOJ_16954 {
 
     private static boolean bfs() {
         Queue<int[]> q = new LinkedList<>();
-        q.add(new int[]{7, 0, 0});
-        visited[0][7][0] = true;
+        q.add(new int[]{7, 0, 0});  //좌측 하단
+        visited[7][0][0] = true;
 
         while (!q.isEmpty()) {
             int[] cur = q.poll();
@@ -40,7 +40,7 @@ public class BOJ_16954 {
             int curC = cur[1];
             int time = cur[2];
 
-            if (curR == 0 && curC == 7) {
+            if (curR == 0 && curC == 7) {  //목적지 도달
                 return true;
             }
 
@@ -53,9 +53,12 @@ public class BOJ_16954 {
                     continue;
                 }
 
-                if (!visited[nextR][nextR][nextC] && getMap(nextR, nextC, time) == '.' && getMap(nextR, nextC, nextTime) == '.') {
-                    visited[nextTime][nextR][nextC] = true;
-                    q.add(new int[]{nextR, nextC, nextTime});
+                if (!visited[nextR][nextC][nextTime]) {
+                    //현재 위치의 현재 시간과 이동 후에 벽이 없을 때
+                    if (getBoard(nextR, nextC, time) == '.' && getBoard(nextR, nextC, nextTime) == '.') {
+                        visited[nextR][nextC][nextTime] = true;
+                        q.add(new int[]{nextR, nextC, nextTime});
+                    }
                 }
             }
         }
@@ -63,9 +66,10 @@ public class BOJ_16954 {
         return false;
     }
 
-    private static char getMap(int r, int c, int t) {
-        int nextR = r - t;
-        if (nextR < 0) {
+    //t초일 때 (r, c)에 벽이 있는지 확인
+    private static char getBoard(int r, int c, int t) {
+        int nextR = r - t;  //t초 전의 행
+        if (nextR < 0) {  //벽이 사라짐
             return '.';
         }
         return board[nextR][c];
