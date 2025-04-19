@@ -11,90 +11,86 @@ https://www.acmicpc.net/problem/1043
  */
 public class BOJ_1043 {
 
-    static int[] parents;
-    static List<Integer> knownPeople;
+    private static int[] parent;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken());  //사람의 수
-        int M = Integer.parseInt(st.nextToken());  //파티의 수
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
 
-        //부모 노드 초기화
-        parents = new int[N + 1];
+        parent = new int[N + 1];
         for (int i = 0; i <= N; i++) {
-            parents[i] = i;
+            parent[i] = i;
         }
+
+        List<Integer> truth = new ArrayList<>();  //진실을 아는 사람
 
         st = new StringTokenizer(br.readLine());
-        int knownCount = Integer.parseInt(st.nextToken());  //진실을 아는 사람 수
-        knownPeople = new ArrayList<>();  //진실을 아는 사람 번호 리스트
-
-        if (knownCount == 0) {
-            System.out.println(M);
-            return;
-        } else {
-            for (int i = 0; i < knownCount; i++) {
-                knownPeople.add(Integer.parseInt(st.nextToken()));
-            }
+        int K = Integer.parseInt(st.nextToken());
+        for (int i = 0; i < K; i++) {
+            int x = Integer.parseInt(st.nextToken());
+            truth.add(x);
         }
 
-        List<int[]> parties = new ArrayList<>();
-
+        List<List<Integer>> parties = new ArrayList<>();
         for (int i = 0; i < M; i++) {
-
             st = new StringTokenizer(br.readLine());
-            int peopleCount = Integer.parseInt(st.nextToken());  //각 파티의 사람 수
-            int[] party = new int[peopleCount];  //각 파티 배열
-            int x = Integer.parseInt(st.nextToken());  //첫번째 사람
-            party[0] = x;
+            int participant = Integer.parseInt(st.nextToken());
 
-            //첫번째 사람과 나머지 사람을 합침
-            for (int j = 1; j < peopleCount; j++) {
-                int y = Integer.parseInt(st.nextToken());
-                unionParent(x, y);
-                party[j] = y;
+            List<Integer> party = new ArrayList<>();
+            int first = Integer.parseInt(st.nextToken());
+            party.add(first);
+
+            if (participant > 1) {  //첫번째와 나머지 사람들을 union
+                for (int j = 1; j < participant; j++) {
+                    int rest = Integer.parseInt(st.nextToken());
+                    party.add(rest);
+                    union(first, rest);
+                }
             }
 
             parties.add(party);
         }
 
-        int count = 0;
+        List<Integer> truthParent = new ArrayList<>();  //기존 진실을 아는 사람의 부모
+        for (int person : truth) {
+            truthParent.add(find(person));
+        }
 
-        for (int[] party : parties) {
-            for (int i : party) {
-                int findParent = getParent(parents[i]);
-                //파티 참가자의 부모 노드가 리스트에 포함될 때 카운트
-                if (knownPeople.contains(findParent)) {
-                    count++;
-                    break;
+        int count = 0;
+        for (List<Integer> party : parties) {
+            boolean flag = false;
+
+            for (Integer person : party) {
+                int parent = find(person);
+                if (truthParent.contains(parent)) {  //파티원의 부모가 진실을 알 경우
+                    flag = true;
                 }
+            }
+
+            if (!flag) {
+                count++;
             }
         }
 
-        System.out.println(M - count);
+        System.out.println(count);
     }
 
-    //부모 노드를 찾는 메서드
-    static int getParent(int x) {
-        if (parents[x] == x) {
+    private static int find(int x) {
+        if (parent[x] == x) {
             return x;
         }
-        return parents[x] = getParent(parents[x]);
+        return parent[x] = find(parent[x]);
     }
 
-    //두 부모 노드를 합치는 메서드
-    static void unionParent(int a, int b) {
-        a = getParent(a);
-        b = getParent(b);
+    private static void union(int first, int rest) {
+        first = find(first);
+        rest = find(rest);
 
-        //진실을 아는 사람을 부모 노드로 하여 합친다.
-        if (knownPeople.contains(b)) {
-            parents[a] = b;
-        } else {
-            parents[b] = a;
+        if (first != rest) {  //부모를 첫번째 파티원으로 설정
+            parent[rest] = first;
         }
     }
-
 }
