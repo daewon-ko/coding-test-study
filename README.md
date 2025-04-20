@@ -1,25 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 4월 3주차 문제
+## 📅 2025년 4월 4주차 문제
 
-### 📌 월요일 
-- [[PGS] 42884번 단속카메라](https://school.programmers.co.kr/learn/courses/30/lessons/42884)  
-- [[BOJ] 16472번 고냥이](https://www.acmicpc.net/problem/16472)  
+### 📌 월요일
+- [[BOJ] 5052번 전화번호 목록](https://www.acmicpc.net/problem/5052)  <!-- 트라이 / 문자열 -->
+- [[PGS] 12971번 스티커 모으기(2)](https://school.programmers.co.kr/learn/courses/30/lessons/12971)  <!-- DP -->
 
-### 📌 화요일 
-- [[BOJ] 16954번 움직이는 미로 탈출](https://www.acmicpc.net/problem/16954)  
-- [[BOJ] 13397번 구간 나누기 2](https://www.acmicpc.net/problem/13397)  
+### 📌 화요일
+- [[BOJ] 2022번 사다리](https://www.acmicpc.net/problem/2022)  <!-- 이분 탐색 / 수학 -->
+- [[BOJ] 2240번 자두나무](https://www.acmicpc.net/problem/2240)  <!-- DP / 누적합 -->
 
-### 📌 수요일 
-- [[BOJ] 14938번 서강 그라운드](https://www.acmicpc.net/problem/14938)  
-- [[BOJ] 15685번 드래곤 커브](https://www.acmicpc.net/problem/15685)  
+### 📌 수요일
+- [[BOJ] 1202번 보석 도둑](https://www.acmicpc.net/problem/1202)  <!-- 그리디 / 힙 -->
+- [[PGS] 64064번 불량 사용자](https://school.programmers.co.kr/learn/courses/30/lessons/64064)  <!-- 백트래킹 -->
 
-### 📌 목요일 
-- [[BOJ] 1043번 거짓말](https://www.acmicpc.net/problem/1043)  
-- [[PGS] 42892번 길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892)  
+### 📌 목요일
+- [[BOJ] 1949번 우수 마을](https://www.acmicpc.net/problem/1949)  <!-- 트리 DP -->
+- [[PGS] 118668번 코딩 테스트 공부](https://school.programmers.co.kr/learn/courses/30/lessons/118668)  <!-- 그리디 / 시뮬레이션 -->
 
-### 📌 금요일 
-- [[PGS] 43162번 네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162)  
-- [[PGS] 67259번 경주로 건설](https://school.programmers.co.kr/learn/courses/30/lessons/67259)  
+### 📌 금요일
+- [[BOJ] 23288번 주사위 굴리기 2](https://www.acmicpc.net/problem/23288)  <!-- 시뮬레이션 / 구현 -->
+- [[BOJ] 17485번 진우의 달 여행 (Small)](https://www.acmicpc.net/problem/17485)  <!-- DP / 방향 제한 --> 
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
