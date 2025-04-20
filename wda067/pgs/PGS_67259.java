@@ -8,52 +8,66 @@ https://school.programmers.co.kr/learn/courses/30/lessons/67259
  */
 class PGS_67259 {
 
+    private int[] dr = {-1, 0, 1, 0};
+    private int[] dc = {0, 1, 0, -1};
+
+    private int N;
+    private int[][] board;
+    private int[][][] cost;
+
     public int solution(int[][] board) {
-        int n = board.length;
-        int[][][] cost = new int[n][n][4];
-        for (int[][] layer : cost)
-            for (int[] row : layer)
-                Arrays.fill(row, Integer.MAX_VALUE);
+        N = board.length;
+        this.board = board;
+        cost = new int[N][N][4];  //r, c, 방향
 
-        int[] dx = {-1, 1, 0, 0}; // 상, 하, 좌, 우
-        int[] dy = {0, 0, -1, 1};
-
-        Queue<Node> queue = new LinkedList<>();
-        for (int i = 0; i < 4; i++) {
-            cost[0][0][i] = 0;
-            queue.offer(new Node(0, 0, 0, i));
+        for (int[][] row : cost) {
+            for (int[] col : row) {
+                Arrays.fill(col, Integer.MAX_VALUE);
+            }
         }
 
-        while (!queue.isEmpty()) {
-            Node curr = queue.poll();
+        return bfs();
+    }
 
-            for (int i = 0; i < 4; i++) {
-                int nx = curr.x + dx[i];
-                int ny = curr.y + dy[i];
+    private int bfs() {
+        Queue<int[]> q = new LinkedList<>();
+        for (int d = 0; d < 4; d++) {
+            cost[0][0][d] = 0;
+            q.add(new int[]{0, 0, d, 0});  //r, c, 방향, 누적 비용
+        }
 
-                if (nx >= 0 && nx < n && ny >= 0 && ny < n && board[nx][ny] == 0) {
-                    int newCost = curr.cost + ((curr.dir == i) ? 100 : 600);
-                    if (cost[nx][ny][i] > newCost) {
-                        cost[nx][ny][i] = newCost;
-                        queue.offer(new Node(nx, ny, newCost, i));
-                    }
+        while (!q.isEmpty()) {
+            int[] cur = q.poll();
+            int r = cur[0];
+            int c = cur[1];
+            int dir = cur[2];
+            int curCost = cur[3];
+
+            for (int d = 0; d < 4; d++) {
+                int nr = r + dr[d];
+                int nc = c + dc[d];
+
+                if (nr < 0 || nr >= N || nc < 0 || nc >= N) {
+                    continue;
+                }
+
+                if (board[nr][nc] == 1) {
+                    continue;
+                }
+
+                //방향이 전환된다면 600원
+                int nextCost = curCost + (dir == d ? 100 : 600);
+                if (cost[nr][nc][d] > nextCost) {  //더 저렴한 비용일 경우
+                    cost[nr][nc][d] = nextCost;
+                    q.add(new int[]{nr, nc, d, nextCost});
                 }
             }
         }
 
-        return Arrays.stream(cost[n - 1][n - 1]).min().getAsInt();
-    }
-
-    private static class Node {
-        int x, y, cost, dir;
-
-        Node(int x, int y, int cost, int dir) {
-            this.x = x;
-            this.y = y;
-            this.cost = cost;
-            this.dir = dir;
+        int answer = Integer.MAX_VALUE;
+        for (int d = 0; d < 4; d++) {
+            answer = Math.min(answer, cost[N - 1][N - 1][d]);
         }
+        return answer;
     }
 }
-
-
