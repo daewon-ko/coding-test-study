@@ -1,25 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 4월 4주차 문제
+## 📅 2025년 5월 1주차 문제
 
 ### 📌 월요일
-- [[BOJ] 5052번 전화번호 목록](https://www.acmicpc.net/problem/5052)  <!-- 트라이 / 문자열 -->
-- [[PGS] 12971번 스티커 모으기(2)](https://school.programmers.co.kr/learn/courses/30/lessons/12971)  <!-- DP -->
+- [[PGS] 340212번 퍼즐 게임 챌린지](https://school.programmers.co.kr/learn/courses/30/lessons/340212)  <!-- 이분 탐색 / 시뮬레이션 -->
+- [[BOJ] 1918번 후위 표기식](https://www.acmicpc.net/problem/1918)  <!-- 스택 / 문자열 / 파싱 -->
 
 ### 📌 화요일
-- [[BOJ] 2022번 사다리](https://www.acmicpc.net/problem/2022)  <!-- 이분 탐색 / 수학 -->
-- [[BOJ] 2240번 자두나무](https://www.acmicpc.net/problem/2240)  <!-- DP / 누적합 -->
+- [[PGS] 42627번 디스크 컨트롤러](https://school.programmers.co.kr/learn/courses/30/lessons/42627)  <!-- 그리디 / 우선순위 큐 -->
+- [[BOJ] 5557번 1학년](https://www.acmicpc.net/problem/5557)  <!-- DP -->
 
 ### 📌 수요일
-- [[BOJ] 1202번 보석 도둑](https://www.acmicpc.net/problem/1202)  <!-- 그리디 / 힙 -->
-- [[PGS] 64064번 불량 사용자](https://school.programmers.co.kr/learn/courses/30/lessons/64064)  <!-- 백트래킹 -->
+- [[PGS] 118669번 등산코스 정하기](https://school.programmers.co.kr/learn/courses/30/lessons/118669)  <!-- 다익스트라 / 그래프 탐색 -->
+- [[BOJ] 2437번 저울](https://www.acmicpc.net/problem/2437)  <!-- 그리디 / 정렬 -->
 
 ### 📌 목요일
-- [[BOJ] 1949번 우수 마을](https://www.acmicpc.net/problem/1949)  <!-- 트리 DP -->
-- [[PGS] 118668번 코딩 테스트 공부](https://school.programmers.co.kr/learn/courses/30/lessons/118668)  <!-- 그리디 / 시뮬레이션 -->
+- [[BOJ] 1240번 노드사이의 거리](https://www.acmicpc.net/problem/1240)  <!-- 트리 / DFS -->
+- [[BOJ] 7453번 합이 0인 네 정수](https://www.acmicpc.net/problem/7453)  <!-- 이분 탐색 / 해시 -->
 
 ### 📌 금요일
-- [[BOJ] 23288번 주사위 굴리기 2](https://www.acmicpc.net/problem/23288)  <!-- 시뮬레이션 / 구현 -->
-- [[BOJ] 17485번 진우의 달 여행 (Small)](https://www.acmicpc.net/problem/17485)  <!-- DP / 방향 제한 --> 
+- [[BOJ] 21939번 문제 추천 시스템 Version 1](https://www.acmicpc.net/problem/21939)  <!-- 자료구조 / 우선순위 큐 / 해시 -->
+- [[BOJ] 10422번 괄호](https://www.acmicpc.net/problem/10422)  <!-- DP / 카탈란 수 -->
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
