@@ -13,48 +13,53 @@ public class BOJ_3151 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int N = Integer.parseInt(br.readLine());
-        int[] arr = new int[N];
+        int N = Integer.parseInt(br.readLine());  //10,000
+        int[] students = new int[N];
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+            students[i] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(arr);
+        Arrays.sort(students);
         long count = 0;
 
         for (int i = 0; i < N - 2; i++) {
-            int left = i + 1;
-            int right = N - 1;
+            int s = i + 1;
+            int e = N - 1;
 
-            while (left < right) {
-                int sum = arr[i] + arr[left] + arr[right];
+            while (s < e) {
+                int sum = students[i] + students[s] + students[e];
 
                 if (sum == 0) {
-                    if (arr[left] == arr[right]) {
-                        int n = right - left + 1;
-                        count += (long) n * (n - 1) / 2;
+                    if (students[s] == students[e]) {  //투 포인터의 값이 같을 때
+                        int same = e - s + 1;  //같은 값 개수
+                        count += (long) same * (same - 1) / 2;  //nC2
                         break;
                     } else {
-                        int lCount = 1;
-                        int rCount = 1;
-                        while (left + 1 < right && arr[left] == arr[left + 1]) {
-                            lCount++;
-                            left++;
+                        int left = students[s];
+                        int right = students[e];
+                        int leftCount = 0;
+                        int rightCount = 0;
+
+                        //left와 같은 값의 개수
+                        while (s <= e && students[s] == left) {
+                            s++;
+                            leftCount++;
                         }
-                        while (right - 1 > left && arr[right] == arr[right - 1]) {
-                            rCount++;
-                            right--;
+
+                        //right와 같은 값의 개수
+                        while (s <= e && students[e] == right) {
+                            e--;
+                            rightCount++;
                         }
-                        count += (long) lCount * rCount;
-                        left++;
-                        right--;
+
+                        count += (long) leftCount * rightCount;  //조합의 수
                     }
                 } else if (sum < 0) {
-                    left++;
+                    s++;
                 } else {
-                    right--;
+                    e--;
                 }
             }
         }

@@ -27,12 +27,12 @@ public class BOJ_11066 {
                 sum[i] = sum[i - 1] + files[i];
             }
 
-            for (int len = 2; len <= K; len++) {
+            for (int len = 2; len <= K; len++) {  //i번부터 j번까지의 길이 2 ~ K
                 for (int i = 1; i <= K - len + 1; i++) {
                     int j = i + len - 1;
                     dp[i][j] = Integer.MAX_VALUE;
 
-                    for (int k = i; k < j; k++) {
+                    for (int k = i; k < j; k++) {  //i ~ k, (k + 1) ~ j의 비용 계산
                         dp[i][j] = Math.min(dp[i][j], dp[i][k] + dp[k + 1][j] + sum[j] - sum[i - 1]);
                     }
                 }
