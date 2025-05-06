@@ -1,3 +1,5 @@
+package yeonjy.pgs;
+
 class PGS_72414 {
     public String solution(String play_time, String adv_time, String[] logs) {
         String answer = "";
