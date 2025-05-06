@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 백준 / 합이 0 / 골드4
 https://www.acmicpc.net/problem/3151
  */
-public class Main {
+public class BOJ_3151 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
