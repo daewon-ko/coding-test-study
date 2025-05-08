@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 /*
-백준 / 캐슬 디펜스 / 골드4
+백준 / 캐슬 디펜스 / 골드3
 https://www.acmicpc.net/problem/17135
  */
 public class BOJ_17135 {
