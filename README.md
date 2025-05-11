@@ -1,25 +1,26 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 5월 2주차 문제
+## 📅 2025년 5월 3주차 문제
 
 ### 📌 월요일
-- [[BOJ] 11066번 파일 합치기](https://www.acmicpc.net/problem/11066) 
-- [[BOJ] 3151번 합이 0](https://www.acmicpc.net/problem/3151) 
+- [[BOJ] 2661번 좋은수열](https://www.acmicpc.net/problem/2661) 
+- [[PGS] 42579번 베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
 
 ### 📌 화요일
-- [[BOJ] 1922번 네트워크 연결](https://www.acmicpc.net/problem/1922)  
-- [[PGS] 72414번 광고 삽입](https://school.programmers.co.kr/learn/courses/30/lessons/72414)
+- [[BOJ] 22944번 죽음의 비](https://www.acmicpc.net/problem/22944)  
+- [[PGS] 81303번 표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303)
 
 ### 📌 수요일
-- [[PGS] 77486번 다단계 칫솔 판매](https://school.programmers.co.kr/learn/courses/30/lessons/77486)
-- [[PGS] 118668번 코딩 테스트 공부](https://school.programmers.co.kr/learn/courses/30/lessons/118668)
+- [[BOJ] 1300번 K번째 수](https://www.acmicpc.net/problem/1300)
+- [[BOJ] 1600번 말이 되고픈 원숭이](https://www.acmicpc.net/problem/1600)
 
 ### 📌 목요일
-- [[BOJ] 17135번 캐슬 디펜스](https://www.acmicpc.net/problem/17135)  
-- [[BOJ] 2073번 수도배관공사](https://www.acmicpc.net/problem/2073) 
+- [[BOJ] 15831번 준표와 조약돌](https://www.acmicpc.net/problem/15831)  
+- [[PGS] 49189번 가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189)
 
 ### 📌 금요일
-- [[BOJ] 1949번 우수 마을](https://www.acmicpc.net/problem/1949)
-- [[BOJ] 18430번 무기 공학](https://www.acmicpc.net/problem/18430)
+- [[BOJ] 2616번 소형기관차](https://www.acmicpc.net/problem/2616)
+- [[PGS] 92345번 사라지는 발판](https://school.programmers.co.kr/learn/courses/30/lessons/92345)
+
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
