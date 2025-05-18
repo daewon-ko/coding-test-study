@@ -1,26 +1,25 @@
 # 💻 코딩 테스트 스터디
 ## 📅 2025년 5월 3주차 문제
 
-### 📌 월요일
-- [[BOJ] 2661번 좋은수열](https://www.acmicpc.net/problem/2661) 
-- [[PGS] 42579번 베스트앨범](https://school.programmers.co.kr/learn/courses/30/lessons/42579)
+### 📌 월요일  
+- [[BOJ] 5430번 AC](https://www.acmicpc.net/problem/5430)  
+- [[PGS] 72413번 합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413)  
 
-### 📌 화요일
-- [[BOJ] 22944번 죽음의 비](https://www.acmicpc.net/problem/22944)  
-- [[PGS] 81303번 표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303)
+### 📌 화요일  
+- [[BOJ] 22866번 탑 보기](https://www.acmicpc.net/problem/22866)  
+- [[BOJ] 2151번 거울 설치](https://www.acmicpc.net/problem/2151)  
 
-### 📌 수요일
-- [[BOJ] 1300번 K번째 수](https://www.acmicpc.net/problem/1300)
-- [[BOJ] 1600번 말이 되고픈 원숭이](https://www.acmicpc.net/problem/1600)
+### 📌 수요일  
+- [[BOJ] 3109번 빵집](https://www.acmicpc.net/problem/3109)  
+- [[BOJ] 4781번 사탕 가게](https://www.acmicpc.net/problem/4781)  
 
-### 📌 목요일
-- [[BOJ] 15831번 준표와 조약돌](https://www.acmicpc.net/problem/15831)  
-- [[PGS] 49189번 가장 먼 노드](https://school.programmers.co.kr/learn/courses/30/lessons/49189)
+### 📌 목요일  
+- [[PGS] 42861번 섬 연결하기](https://school.programmers.co.kr/learn/courses/30/lessons/42861)  
+- [[BOJ] 12100번 2048 (Easy)](https://www.acmicpc.net/problem/12100)  
 
-### 📌 금요일
-- [[BOJ] 2616번 소형기관차](https://www.acmicpc.net/problem/2616)
-- [[PGS] 92345번 사라지는 발판](https://school.programmers.co.kr/learn/courses/30/lessons/92345)
-
+### 📌 금요일  
+- [[PGS] 72415번 호텔 방 배정](https://school.programmers.co.kr/learn/courses/30/lessons/72415)  
+- [[BOJ] 13023번 ABCDE](https://www.acmicpc.net/problem/13023)
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
