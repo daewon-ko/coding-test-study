@@ -2,24 +2,24 @@
 ## 📅 2025년 5월 3주차 문제
 
 ### 📌 월요일  
-- [[BOJ] 5430번 AC](https://www.acmicpc.net/problem/5430)  
-- [[PGS] 72413번 합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413)  
+- [[BOJ] 18428번 감시 피하기](https://www.acmicpc.net/problem/18428)  
+- [[BOJ] 1707번 이분 그래프](https://www.acmicpc.net/problem/1707)  
 
 ### 📌 화요일  
-- [[BOJ] 22866번 탑 보기](https://www.acmicpc.net/problem/22866)  
-- [[BOJ] 2151번 거울 설치](https://www.acmicpc.net/problem/2151)  
+- [[BOJ] 15683번 감시](https://www.acmicpc.net/problem/15683)  
+- [[PGS] 150366번 표 병합](https://school.programmers.co.kr/learn/courses/30/lessons/150366)  
 
 ### 📌 수요일  
-- [[BOJ] 3109번 빵집](https://www.acmicpc.net/problem/3109)  
-- [[BOJ] 4781번 사탕 가게](https://www.acmicpc.net/problem/4781)  
+- [[BOJ] 3190번 뱀](https://www.acmicpc.net/problem/3190)  
+- [[BOJ] 1700번 멀티탭 스케줄링](https://www.acmicpc.net/problem/1700)  
 
 ### 📌 목요일  
-- [[PGS] 42861번 섬 연결하기](https://school.programmers.co.kr/learn/courses/30/lessons/42861)  
-- [[BOJ] 12100번 2048 (Easy)](https://www.acmicpc.net/problem/12100)  
+- [[BOJ] 13460번 구슬 탈출 2](https://www.acmicpc.net/problem/13460)  
+- [[PGS] 340210번 산 모양 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/340210)  
 
 ### 📌 금요일  
-- [[PGS] 72415번 호텔 방 배정](https://school.programmers.co.kr/learn/courses/30/lessons/72415)  
-- [[BOJ] 13023번 ABCDE](https://www.acmicpc.net/problem/13023)
+- [[BOJ] 7490번 0 만들기](https://www.acmicpc.net/problem/7490)  
+- [[BOJ] 2225번 합분해](https://www.acmicpc.net/problem/2225)  
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
