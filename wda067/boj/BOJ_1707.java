@@ -55,7 +55,7 @@ public class BOJ_1707 {
                     int cur = q.poll();
 
                     for (int next : adjList.get(cur)) {
-                        if (num[next] == 0) {
+                        if (num[next] == 0) {  //방문하지 않은 노드
                             num[next] = num[cur] * -1;  //인접 노드 집합 구분
                             q.add(next);
                         } else {
