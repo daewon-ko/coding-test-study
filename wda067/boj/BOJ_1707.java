@@ -13,7 +13,6 @@ https://www.acmicpc.net/problem/1707
  */
 public class BOJ_1707 {
 
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
