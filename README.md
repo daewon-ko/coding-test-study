@@ -1,25 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 5월 5주차 문제
+## 📅 2025년 6월 1주차 문제
 
 ### 📌 월요일  
-- [[BOJ] 18428번 감시 피하기](https://www.acmicpc.net/problem/18428)  
-- [[BOJ] 1707번 이분 그래프](https://www.acmicpc.net/problem/1707)  
+- [[BOJ] 12904번 A와 B](https://www.acmicpc.net/problem/12904)  
+- [[PGS] 60063번 블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063)  
 
 ### 📌 화요일  
-- [[BOJ] 15683번 감시](https://www.acmicpc.net/problem/15683)  
-- [[PGS] 150366번 표 병합](https://school.programmers.co.kr/learn/courses/30/lessons/150366)  
+- [[BOJ] 1987번 알파벳](https://www.acmicpc.net/problem/1987)  
+- [[BOJ] 5582번 공통 부분 문자열](https://www.acmicpc.net/problem/5582)  
 
 ### 📌 수요일  
-- [[BOJ] 3190번 뱀](https://www.acmicpc.net/problem/3190)  
-- [[BOJ] 1700번 멀티탭 스케줄링](https://www.acmicpc.net/problem/1700)  
+- [[BOJ] 1781번 컵라면](https://www.acmicpc.net/problem/1781)  
+- [[BOJ] 2573번 빙산](https://www.acmicpc.net/problem/2573)  
 
 ### 📌 목요일  
-- [[BOJ] 13460번 구슬 탈출 2](https://www.acmicpc.net/problem/13460)  
-- [[PGS] 340210번 산 모양 타일링](https://school.programmers.co.kr/learn/courses/30/lessons/340210)  
+- [[BOJ] 1111번 IQ Test](https://www.acmicpc.net/problem/1111)  
+- [[PGS] 388354번 홀짝 트리](https://school.programmers.co.kr/learn/courses/30/lessons/388354)  
 
 ### 📌 금요일  
-- [[BOJ] 7490번 0 만들기](https://www.acmicpc.net/problem/7490)  
-- [[BOJ] 2225번 합분해](https://www.acmicpc.net/problem/2225)  
+- [[BOJ] 15684번 사다리 조작](https://www.acmicpc.net/problem/15684)  
+- [[BOJ] 2096번 내려가기](https://www.acmicpc.net/problem/2096)
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
