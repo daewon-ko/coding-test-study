@@ -1,25 +1,25 @@
 # 💻 코딩 테스트 스터디
-## 📅 2025년 6월 1주차 문제
+## 📅 2025년 6월 3주차 문제
 
 ### 📌 월요일  
-- [[BOJ] 12904번 A와 B](https://www.acmicpc.net/problem/12904)  
-- [[PGS] 60063번 블록 이동하기](https://school.programmers.co.kr/learn/courses/30/lessons/60063)  
+- [[PGS] 17678번 셔틀버스](https://school.programmers.co.kr/learn/courses/30/lessons/17678)  
+- [[BOJ] 2631번 줄세우기](https://www.acmicpc.net/problem/2631)  
 
 ### 📌 화요일  
-- [[BOJ] 1987번 알파벳](https://www.acmicpc.net/problem/1987)  
-- [[BOJ] 5582번 공통 부분 문자열](https://www.acmicpc.net/problem/5582)  
+- [[BOJ] 2565번 전깃줄](https://www.acmicpc.net/problem/2565)  
+- [[BOJ] 17142번 연구소 3](https://www.acmicpc.net/problem/17142)  
 
 ### 📌 수요일  
-- [[BOJ] 1781번 컵라면](https://www.acmicpc.net/problem/1781)  
-- [[BOJ] 2573번 빙산](https://www.acmicpc.net/problem/2573)  
+- [[BOJ] 10775번 공항](https://www.acmicpc.net/problem/10775)  
+- [[BOJ] 1941번 소문난 칠공주](https://www.acmicpc.net/problem/1941)  
 
 ### 📌 목요일  
-- [[BOJ] 1111번 IQ Test](https://www.acmicpc.net/problem/1111)  
-- [[PGS] 388354번 홀짝 트리](https://school.programmers.co.kr/learn/courses/30/lessons/388354)  
+- [[BOJ] 6087번 레이저 통신](https://www.acmicpc.net/problem/6087)  
+- [[BOJ] 16434번 드래곤 앤 던전](https://www.acmicpc.net/problem/16434)  
 
 ### 📌 금요일  
-- [[BOJ] 15684번 사다리 조작](https://www.acmicpc.net/problem/15684)  
-- [[BOJ] 2096번 내려가기](https://www.acmicpc.net/problem/2096)
+- [[BOJ] 2539번 모자이크](https://www.acmicpc.net/problem/2539)  
+- [[PGS] 84021번 퍼즐 조각 채우기](https://school.programmers.co.kr/learn/courses/30/lessons/84021)
 
 ## ✅ 스터디 진행 방법
 1. 현재 저장소를 자신의 깃허브 계정으로 **포크**한다.
